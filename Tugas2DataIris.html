@@ -348,13 +348,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">GET DATA IRIS (dari 4 data yang berbeda)</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#postgresql-local-mengambil-data-sepallength">PostgreSQL Local (mengambil data SepalLength)</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#postgresql-elephant-mengambil-data-sepalwidth">PostgreSQL Elephant (mengambil data SepalWidth)</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mysql-local-mengambil-data-petallength">MYSQL Local (mengambil data PetalLength)</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sql-server-mengambil-data-petal-width-class">SQL Server (mengambil data Petal Width, Class)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#postgresql-local-mengambil-data-sepallength">PostgreSQL Local (mengambil data SepalLength)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#postgresql-elephant-mengambil-data-sepalwidth">PostgreSQL Elephant (mengambil data SepalWidth)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mysql-local-mengambil-data-petallength">MYSQL Local (mengambil data PetalLength)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sql-server-mengambil-data-petal-width-class">SQL Server (mengambil data Petal Width, Class)</a></li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -365,7 +363,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="section" id="get-data-iris-dari-4-data-yang-berbeda">
+  <div class="tex2jax_ignore mathjax_ignore section" id="get-data-iris-dari-4-data-yang-berbeda">
 <h1>GET DATA IRIS (dari 4 data yang berbeda)<a class="headerlink" href="#get-data-iris-dari-4-data-yang-berbeda" title="Permalink to this heading">#</a></h1>
 <p>-sepallength (postgresql local)</p>
 <p>-sepalwidth (elephant postgresql)</p>
@@ -401,9 +399,8 @@ document.write(`
 </div>
 </div>
 </div>
-</div>
 <div class="section" id="postgresql-local-mengambil-data-sepallength">
-<h1>PostgreSQL Local (mengambil data SepalLength)<a class="headerlink" href="#postgresql-local-mengambil-data-sepallength" title="Permalink to this heading">#</a></h1>
+<h2>PostgreSQL Local (mengambil data SepalLength)<a class="headerlink" href="#postgresql-local-mengambil-data-sepallength" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conn</span> <span class="o">=</span> <span class="n">psycopg2</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
@@ -474,7 +471,7 @@ document.write(`
 </div>
 </div>
 <div class="section" id="postgresql-elephant-mengambil-data-sepalwidth">
-<h1>PostgreSQL Elephant (mengambil data SepalWidth)<a class="headerlink" href="#postgresql-elephant-mengambil-data-sepalwidth" title="Permalink to this heading">#</a></h1>
+<h2>PostgreSQL Elephant (mengambil data SepalWidth)<a class="headerlink" href="#postgresql-elephant-mengambil-data-sepalwidth" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">psycopg2</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
@@ -568,7 +565,7 @@ document.write(`
 </div>
 </div>
 <div class="section" id="mysql-local-mengambil-data-petallength">
-<h1>MYSQL Local (mengambil data PetalLength)<a class="headerlink" href="#mysql-local-mengambil-data-petallength" title="Permalink to this heading">#</a></h1>
+<h2>MYSQL Local (mengambil data PetalLength)<a class="headerlink" href="#mysql-local-mengambil-data-petallength" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conn</span> <span class="o">=</span> <span class="n">mysql</span><span class="o">.</span><span class="n">connector</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
@@ -663,7 +660,7 @@ document.write(`
 </div>
 </div>
 <div class="section" id="sql-server-mengambil-data-petal-width-class">
-<h1>SQL Server (mengambil data Petal Width, Class)<a class="headerlink" href="#sql-server-mengambil-data-petal-width-class" title="Permalink to this heading">#</a></h1>
+<h2>SQL Server (mengambil data Petal Width, Class)<a class="headerlink" href="#sql-server-mengambil-data-petal-width-class" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyodbc</span>
@@ -921,6 +918,7 @@ document.write(`
 setelah semua data dari beberapa databes dijadikan satu, buka akun orchest buat folder dataset lalu upload file csv dari beberapa database tersebut, setelah file csv ter upload, lakukan get-data untuk menamdapatkan data dari masing masing data csv yang telah di upload.</p>
 <p>setelah semua data didapatkan lakukan beberapa klafikisasi, setelah itu masuk ke pipeline untuk membuat tahapan data.</p>
 </div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -965,13 +963,11 @@ setelah semua data dari beberapa databes dijadikan satu, buka akun orchest buat 
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">GET DATA IRIS (dari 4 data yang berbeda)</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#postgresql-local-mengambil-data-sepallength">PostgreSQL Local (mengambil data SepalLength)</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#postgresql-elephant-mengambil-data-sepalwidth">PostgreSQL Elephant (mengambil data SepalWidth)</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mysql-local-mengambil-data-petallength">MYSQL Local (mengambil data PetalLength)</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sql-server-mengambil-data-petal-width-class">SQL Server (mengambil data Petal Width, Class)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#postgresql-local-mengambil-data-sepallength">PostgreSQL Local (mengambil data SepalLength)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#postgresql-elephant-mengambil-data-sepalwidth">PostgreSQL Elephant (mengambil data SepalWidth)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mysql-local-mengambil-data-petallength">MYSQL Local (mengambil data PetalLength)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sql-server-mengambil-data-petal-width-class">SQL Server (mengambil data Petal Width, Class)</a></li>
 </ul>
-
   </nav></div>
 
 </div></div>
