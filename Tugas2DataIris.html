@@ -354,6 +354,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#postgresql-elephant-mengambil-data-sepalwidth">PostgreSQL Elephant (mengambil data SepalWidth)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mysql-local-mengambil-data-petallength">MYSQL Local (mengambil data PetalLength)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sql-server-mengambil-data-petal-width-class">SQL Server (mengambil data Petal Width, Class)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pca">PCA</a></li>
 </ul>
             </nav>
         </div>
@@ -374,54 +375,32 @@ document.write(`
 <p>-petalwidth dan class (sql server local)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
-<span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">KeyboardInterrupt</span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">d5df0069828e</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
-
-<span class="nn">/usr/local/lib/python3.9/dist-packages/google/colab/drive.py</span> in <span class="ni">mount</span><span class="nt">(mountpoint, force_remount, timeout_ms, readonly)</span>
-<span class="g g-Whitespace">    </span><span class="mi">101</span> <span class="k">def</span> <span class="nf">mount</span><span class="p">(</span><span class="n">mountpoint</span><span class="p">,</span> <span class="n">force_remount</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">timeout_ms</span><span class="o">=</span><span class="mi">120000</span><span class="p">,</span> <span class="n">readonly</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">102</span><span class="w">   </span><span class="sd">&quot;&quot;&quot;Mount your Google Drive at the specified mountpoint path.&quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">103</span>   <span class="k">return</span> <span class="n">_mount</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">104</span>       <span class="n">mountpoint</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">105</span>       <span class="n">force_remount</span><span class="o">=</span><span class="n">force_remount</span><span class="p">,</span>
-
-<span class="nn">/usr/local/lib/python3.9/dist-packages/google/colab/drive.py</span> in <span class="ni">_mount</span><span class="nt">(mountpoint, force_remount, timeout_ms, ephemeral, readonly)</span>
-<span class="g g-Whitespace">    </span><span class="mi">130</span>   <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">131</span>   <span class="k">if</span> <span class="n">ephemeral</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">132</span>     <span class="n">_message</span><span class="o">.</span><span class="n">blocking_request</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">133</span>         <span class="s1">&#39;request_auth&#39;</span><span class="p">,</span> <span class="n">request</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;authType&#39;</span><span class="p">:</span> <span class="s1">&#39;dfs_ephemeral&#39;</span><span class="p">},</span> <span class="n">timeout_sec</span><span class="o">=</span><span class="kc">None</span>
-<span class="g g-Whitespace">    </span><span class="mi">134</span>     <span class="p">)</span>
-
-<span class="nn">/usr/local/lib/python3.9/dist-packages/google/colab/_message.py</span> in <span class="ni">blocking_request</span><span class="nt">(request_type, request, timeout_sec, parent)</span>
-<span class="g g-Whitespace">    </span><span class="mi">175</span>       <span class="n">request_type</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="n">parent</span><span class="p">,</span> <span class="n">expect_reply</span><span class="o">=</span><span class="kc">True</span>
-<span class="g g-Whitespace">    </span><span class="mi">176</span>   <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">177</span>   <span class="k">return</span> <span class="n">read_reply_from_input</span><span class="p">(</span><span class="n">request_id</span><span class="p">,</span> <span class="n">timeout_sec</span><span class="p">)</span>
-
-<span class="nn">/usr/local/lib/python3.9/dist-packages/google/colab/_message.py</span> in <span class="ni">read_reply_from_input</span><span class="nt">(message_id, timeout_sec)</span>
-<span class="g g-Whitespace">     </span><span class="mi">95</span>     <span class="n">reply</span> <span class="o">=</span> <span class="n">_read_next_input_message</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">96</span>     <span class="k">if</span> <span class="n">reply</span> <span class="o">==</span> <span class="n">_NOT_READY</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">reply</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
-<span class="ne">---&gt; </span><span class="mi">97</span>       <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.025</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">98</span>       <span class="k">continue</span>
-<span class="g g-Whitespace">     </span><span class="mi">99</span>     <span class="k">if</span> <span class="p">(</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyodbc</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">psycopg2</span>
 <span class="kn">import</span> <span class="nn">mysql.connector</span>
+<span class="kn">import</span> <span class="nn">orchest</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">ModuleNotFoundError</span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">f15b6c3898a0</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pyodbc</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">psycopg2</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">mysql.connector</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span> <span class="nn">orchest</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;pyodbc&#39;
+
+<span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NOTE</span>: If your import is failing due to a missing package, you can
+<span class="n">manually</span> <span class="n">install</span> <span class="n">dependencies</span> <span class="n">using</span> <span class="n">either</span> <span class="o">!</span>pip<span class="w"> </span>or<span class="w"> </span>!apt.
+
+<span class="n">To</span> <span class="n">view</span> <span class="n">examples</span> <span class="n">of</span> <span class="n">installing</span> <span class="n">some</span> <span class="n">common</span> <span class="n">dependencies</span><span class="p">,</span> <span class="n">click</span> <span class="n">the</span>
+<span class="s2">&quot;Open Examples&quot;</span> <span class="n">button</span> <span class="n">below</span><span class="o">.</span>
+<span class="gt">---------------------------------------------------------------------------</span>
 </pre></div>
 </div>
 </div>
@@ -430,22 +409,17 @@ document.write(`
 <h2>PostgreSQL Local (mengambil data SepalLength)<a class="headerlink" href="#postgresql-local-mengambil-data-sepallength" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conn</span> <span class="o">=</span> <span class="n">psycopg2</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">psycopg2</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
     <span class="n">database</span><span class="o">=</span><span class="s2">&quot;prosain200411100120_sepallength&quot;</span><span class="p">,</span>
     <span class="n">user</span><span class="o">=</span><span class="s2">&quot;postgres&quot;</span><span class="p">,</span>
     <span class="n">password</span><span class="o">=</span><span class="s2">&quot;sholeh841&quot;</span><span class="p">,</span>
-    <span class="n">host</span><span class="o">=</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span>
-    <span class="n">port</span><span class="o">=</span><span class="s2">&quot;5432&quot;</span>
+    <span class="n">host</span><span class="o">=</span><span class="s2">&quot;0.tcp.ap.ngrok.io&quot;</span><span class="p">,</span>
+    <span class="n">port</span><span class="o">=</span><span class="s2">&quot;19419&quot;</span>
 <span class="p">)</span>
-
-<span class="n">cur</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
-
-<span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT sepallength FROM sepallength&quot;</span><span class="p">)</span>
-
-<span class="n">sl</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
-
-<span class="n">sl</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">sl</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;sepalLength&#39;</span><span class="p">])</span>
-<span class="n">sl</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;SELECT sepallength FROM sepallength&quot;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">db</span><span class="p">)</span>
+<span class="n">orchest</span><span class="o">.</span><span class="n">output</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;postgre_local&quot;</span><span class="p">)</span>
+<span class="n">df</span>
 </pre></div>
 </div>
 </div>
@@ -509,8 +483,9 @@ document.write(`
     <span class="n">port</span><span class="o">=</span><span class="s2">&quot;5432&quot;</span>
 <span class="p">)</span>
 <span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;SELECT * FROM sepalwidth&quot;</span>
-<span class="n">sw</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">db</span><span class="p">)</span>
-<span class="n">sw</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">db</span><span class="p">)</span>
+<span class="n">orchest</span><span class="o">.</span><span class="n">output</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;elephant&quot;</span><span class="p">)</span>
+<span class="n">df</span>
 </pre></div>
 </div>
 </div>
@@ -595,21 +570,18 @@ document.write(`
 <h2>MYSQL Local (mengambil data PetalLength)<a class="headerlink" href="#mysql-local-mengambil-data-petallength" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conn</span> <span class="o">=</span> <span class="n">mysql</span><span class="o">.</span><span class="n">connector</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
-    <span class="n">host</span><span class="o">=</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mydb</span> <span class="o">=</span> <span class="n">mysql</span><span class="o">.</span><span class="n">connector</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
+    <span class="n">host</span><span class="o">=</span><span class="s2">&quot;0.tcp.ap.ngrok.io&quot;</span><span class="p">,</span>
+    <span class="n">port</span><span class="o">=</span><span class="s2">&quot;17448&quot;</span><span class="p">,</span>
+    <span class="n">database</span><span class="o">=</span><span class="s2">&quot;prosaindata200411100120&quot;</span><span class="p">,</span>
     <span class="n">user</span><span class="o">=</span><span class="s2">&quot;root&quot;</span><span class="p">,</span>
-    <span class="n">password</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-    <span class="n">database</span><span class="o">=</span><span class="s2">&quot;prosaindata200411100120&quot;</span>
+    <span class="n">password</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
 <span class="p">)</span>
-
-<span class="n">mycursor</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
-
-<span class="n">mycursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT petallength FROM petallength&quot;</span><span class="p">)</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">mycursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
-
-<span class="c1"># # plot the data to data frame</span>
-<span class="n">pl</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;petallength&#39;</span><span class="p">])</span>
-<span class="n">pl</span>
+<span class="n">mycursor</span> <span class="o">=</span> <span class="n">mydb</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;SELECT petallength FROM petallength&quot;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">mydb</span><span class="p">)</span>
+<span class="n">orchest</span><span class="o">.</span><span class="n">output</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;mysql&quot;</span><span class="p">)</span>
+<span class="n">df</span>
 </pre></div>
 </div>
 </div>
@@ -732,15 +704,26 @@ document.write(`
 <p>dibawah ini pengambungan dari data yang diambil dari beberapa database</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># gabung semua data frame</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">sl</span><span class="p">,</span> <span class="n">sw</span><span class="p">,</span> <span class="n">pl</span><span class="p">,</span> <span class="n">pwcls</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">orchest</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">input_data</span> <span class="o">=</span> <span class="n">orchest</span><span class="o">.</span><span class="n">get_inputs</span><span class="p">()</span>
+
+
+<span class="n">datapost</span> <span class="o">=</span> <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;postgre_local&#39;</span><span class="p">]</span>
+<span class="n">datael</span> <span class="o">=</span> <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;elephant&#39;</span><span class="p">]</span>
+<span class="n">datamysql</span> <span class="o">=</span> <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;mysql&#39;</span><span class="p">]</span>
+<span class="n">csv</span> <span class="o">=</span> <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;datacsv&#39;</span><span class="p">]</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">datapost</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">datael</span><span class="p">)</span>
+<span class="n">data1</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">datamysql</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">data1</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">csv</span><span class="p">)</span>
+<span class="n">orchest</span><span class="o">.</span><span class="n">output</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;data&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -941,9 +924,139 @@ document.write(`
 <p>150 rows × 5 columns</p>
 </div></div></div>
 </div>
+</div>
+<div class="section" id="pca">
+<h2>PCA<a class="headerlink" href="#pca" title="Permalink to this heading">#</a></h2>
+<p>setelah mendapatkan data utuh dari masing masing database  lakukan pca untuk mengurangi dimensi data agar perhitungan jadi lebih mudah</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">orchest</span>
+<span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">orchest</span><span class="o">.</span><span class="n">get_inputs</span><span class="p">()</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">4</span><span class="p">]</span>
+
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">X_train</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+<span class="n">X_test</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">hasil_variance</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">explained_variance_ratio_</span> <span class="c1"># Proses pengecekan variance</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+
+<span class="n">orchest</span><span class="o">.</span><span class="n">output</span><span class="p">((</span><span class="n">X_train</span><span class="p">,</span><span class="n">X_test</span><span class="p">,</span><span class="n">y_test</span><span class="p">,</span><span class="n">y_train</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;pca&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>setelah dilakukan PCA selanjutnya mengecek akurasi dengan  menggunakan metode KNN</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">orchest</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">orchest</span><span class="o">.</span><span class="n">get_inputs</span><span class="p">()</span>
+
+<span class="n">X_train</span><span class="p">,</span><span class="n">X_test</span><span class="p">,</span><span class="n">y_test</span><span class="p">,</span><span class="n">y_train</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;pca&#39;</span><span class="p">]</span>
+
+<span class="c1"># print(pca.explained_variance_ratio_)</span>
+<span class="c1"># print(pca.singular_values_)</span>
+<span class="n">knn</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">knn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">)</span>
+<span class="n">hasil</span> <span class="o">=</span> <span class="n">knn</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+<span class="n">orchest</span><span class="o">.</span><span class="n">output</span><span class="p">(</span><span class="n">hasil</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;hasilknn&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>lalu mengecek akurasi dengan metode Kneighbor</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">orchest</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
+<span class="c1">#Metrics</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">make_scorer</span><span class="p">,</span> <span class="n">accuracy_score</span><span class="p">,</span><span class="n">precision_score</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">classification_report</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span> <span class="p">,</span><span class="n">precision_score</span><span class="p">,</span><span class="n">recall_score</span><span class="p">,</span><span class="n">f1_score</span>
+<span class="c1">#Model Select</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">KFold</span><span class="p">,</span><span class="n">train_test_split</span><span class="p">,</span><span class="n">cross_val_score</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span>  <span class="n">LogisticRegression</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">linear_model</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">SGDClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">SVC</span><span class="p">,</span> <span class="n">LinearSVC</span>
+<span class="kn">from</span> <span class="nn">sklearn.naive_bayes</span> <span class="kn">import</span> <span class="n">GaussianNB</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">orchest</span><span class="o">.</span><span class="n">get_inputs</span><span class="p">()</span>
+
+<span class="n">X_train</span><span class="p">,</span><span class="n">X_test</span><span class="p">,</span><span class="n">y_test</span><span class="p">,</span><span class="n">y_train</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;pca&#39;</span><span class="p">]</span>
+<span class="c1"># # fitur</span>
+<span class="c1"># X = df.iloc[:, :-1]</span>
+<span class="c1"># # target</span>
+<span class="c1"># y = df.iloc[:, 4]</span>
+
+<span class="c1"># X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=1, stratify=y)</span>
+<span class="c1"># X_train,X_test,y_train,y_test=train_test_split(X,y,test_size=0.3,random_state=0)</span>
+<span class="n">gaussian</span> <span class="o">=</span> <span class="n">GaussianNB</span><span class="p">()</span>
+<span class="n">gaussian</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">Y_pred</span> <span class="o">=</span> <span class="n">gaussian</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span> 
+<span class="n">accuracy_nb</span><span class="o">=</span><span class="nb">round</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">Y_pred</span><span class="p">)</span><span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">acc_gaussian</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">gaussian</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="n">accuracy</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">Y_pred</span><span class="p">)</span>
+<span class="n">orchest</span><span class="o">.</span><span class="n">output</span><span class="p">(</span><span class="n">accuracy</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;hasilnb&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>setelah hasil dari KNN dan Kneighbor didapatkan selanjutnyta mengecek hasil akurasi</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hasil</span> <span class="o">=</span> <span class="n">orchest</span><span class="o">.</span><span class="n">get_inputs</span><span class="p">()</span>
+
+<span class="n">hasilKnn</span> <span class="o">=</span> <span class="n">hasil</span><span class="p">[</span><span class="s1">&#39;hasilknn&#39;</span><span class="p">]</span>
+<span class="n">hasilNb</span> <span class="o">=</span> <span class="n">hasil</span><span class="p">[</span><span class="s1">&#39;hasilnb&#39;</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hasil Akurasi K-NN&#39;</span><span class="p">,</span> <span class="n">hasilKnn</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hasil Akurasi Naive Bayes&#39;</span><span class="p">,</span> <span class="n">hasilNb</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>##PIPELINE
-setelah semua data dari beberapa databes dijadikan satu, buka akun orchest buat folder dataset lalu upload file csv dari beberapa database tersebut, setelah file csv ter upload, lakukan get-data untuk menamdapatkan data dari masing masing data csv yang telah di upload.</p>
-<p>setelah semua data didapatkan lakukan beberapa klafikisasi, setelah itu masuk ke pipeline untuk membuat tahapan data.</p>
+setelah semua tahapan data diperoleh dan sudah melakukan klasifikasi data untuk mengecek akursai makan etelah itu membuat pipeline pada orchest untuk membuat tahapan data.</p>
 </div>
 </div>
 
@@ -1003,6 +1116,7 @@ setelah semua data dari beberapa databes dijadikan satu, buka akun orchest buat 
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#postgresql-elephant-mengambil-data-sepalwidth">PostgreSQL Elephant (mengambil data SepalWidth)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mysql-local-mengambil-data-petallength">MYSQL Local (mengambil data PetalLength)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sql-server-mengambil-data-petal-width-class">SQL Server (mengambil data Petal Width, Class)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pca">PCA</a></li>
 </ul>
   </nav></div>
 
