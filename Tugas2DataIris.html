@@ -156,7 +156,7 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Tugas1.html"><strong>CRAWLING DATA TUGAS 1</strong></a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">GET DATA IRIS</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>GET DATA IRIS</strong></a></li>
 </ul>
 
     </div>
@@ -354,7 +354,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#postgresql-elephant-mengambil-data-sepalwidth">PostgreSQL Elephant (mengambil data SepalWidth)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mysql-local-mengambil-data-petallength">MYSQL Local (mengambil data PetalLength)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sql-server-mengambil-data-petal-width-class">SQL Server (mengambil data Petal Width, Class)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pca">PCA</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengecek-akurasi">mengecek akurasi</a></li>
 </ul>
             </nav>
         </div>
@@ -367,7 +367,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="get-data-iris">
-<h1>GET DATA IRIS<a class="headerlink" href="#get-data-iris" title="Permalink to this heading">#</a></h1>
+<h1><strong>GET DATA IRIS</strong><a class="headerlink" href="#get-data-iris" title="Permalink to this heading">#</a></h1>
 <p>(dari 4 data yang berbeda)</p>
 <p>-sepallength (postgresql local)</p>
 <p>-sepalwidth (elephant postgresql)</p>
@@ -925,8 +925,9 @@ document.write(`
 </div></div></div>
 </div>
 </div>
-<div class="section" id="pca">
-<h2>PCA<a class="headerlink" href="#pca" title="Permalink to this heading">#</a></h2>
+<div class="section" id="mengecek-akurasi">
+<h2>mengecek akurasi<a class="headerlink" href="#mengecek-akurasi" title="Permalink to this heading">#</a></h2>
+<p>##PCA</p>
 <p>setelah mendapatkan data utuh dari masing masing database  lakukan pca untuk mengurangi dimensi data agar perhitungan jadi lebih mudah</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -989,7 +990,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>lalu mengecek akurasi dengan metode Kneighbor</p>
+<p>lalu mengecek akurasi dengan metode Naive Bayes</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">orchest</span>
@@ -1041,7 +1042,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>setelah hasil dari KNN dan Kneighbor didapatkan selanjutnyta mengecek hasil akurasi</p>
+<p>setelah hasil dari KNN dan NaiveBayes didapatkan selanjutnyta mengecek hasil akurasi</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hasil</span> <span class="o">=</span> <span class="n">orchest</span><span class="o">.</span><span class="n">get_inputs</span><span class="p">()</span>
@@ -1055,8 +1056,8 @@ document.write(`
 </div>
 </div>
 </div>
-<p>##PIPELINE
-setelah semua tahapan data diperoleh dan sudah melakukan klasifikasi data untuk mengecek akursai makan etelah itu membuat pipeline pada orchest untuk membuat tahapan data.</p>
+<p>##PIPELINE</p>
+<p>setelah semua tahapan data diperoleh dan sudah melakukan klasifikasi data untuk mengecek akursai makan etelah itu membuat pipeline pada orchest untuk membuat tahapan data.</p>
 </div>
 </div>
 
@@ -1116,7 +1117,7 @@ setelah semua tahapan data diperoleh dan sudah melakukan klasifikasi data untuk 
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#postgresql-elephant-mengambil-data-sepalwidth">PostgreSQL Elephant (mengambil data SepalWidth)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mysql-local-mengambil-data-petallength">MYSQL Local (mengambil data PetalLength)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sql-server-mengambil-data-petal-width-class">SQL Server (mengambil data Petal Width, Class)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pca">PCA</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengecek-akurasi">mengecek akurasi</a></li>
 </ul>
   </nav></div>
 
