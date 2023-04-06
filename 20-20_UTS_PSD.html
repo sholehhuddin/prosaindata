@@ -1,0 +1,2700 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crawling data PTA &#8212; Mohammad Sholeh Huddin</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '20-20_UTS_PSD';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Tugas1.html"><strong>CRAWLING DATA TUGAS 1</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tugas2DataIris.html"><strong>GET DATA IRIS</strong></a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F20-20_UTS_PSD.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/20-20_UTS_PSD.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Crawling data PTA</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Crawling data PTA</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#load-data">Load Data</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-exploration">Data Exploration</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#text-preprocessing">Text Preprocessing</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#text-cleaning">Text Cleaning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-missing-values">Remove Missing Values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-duplicate-values">Remove Duplicate Values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenization">Tokenization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stop-words-removal">Stop Words Removal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stemming">Stemming</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#export-cleaned-data">Export Cleaned Data</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <p>#<strong>UTS PROSAINDATA</strong></p>
+<ol class="arabic simple">
+<li><p>Crawling Data di PTA Trunojoyo</p></li>
+<li><p>Text Processing</p></li>
+</ol>
+<ul class="simple">
+<li><p>cleansing (menghilangkan tag yang tidak perlu)</p></li>
+<li><p>tokenisasi (memecah kalimat menjadi kata)</p></li>
+<li><p>stopword (membuang kata yang tidak perlu)</p></li>
+<li><p>Menghilangkan karekter tertentu</p></li>
+<li></li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p>Preprocessing PCA</p></li>
+<li><p>Modelling KNN &amp; Naive Bayes</p></li>
+</ol>
+<div class="section" id="crawling-data-pta">
+<h1>Crawling data PTA<a class="headerlink" href="#crawling-data-pta" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span> <span class="k">as</span> <span class="nn">req</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span> <span class="k">as</span> <span class="n">bs</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">csv</span>
+
+<span class="n">userAgent</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;user-agent&#39;</span><span class="p">:</span><span class="s1">&#39;Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Mobile Safari/537.36&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="load-data">
+<h1>Load Data<a class="headerlink" href="#load-data" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;https://github.com/sholehhuddin/psd/blob/main/PtaLabelPalingFix.xlsx?raw=true&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-5f04862a-e958-481a-af67-e6b6632a75b4">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>NIM</th>
+      <th>Nama</th>
+      <th>Judul</th>
+      <th>Abstrak</th>
+      <th>Kelas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>40411100468</td>
+      <td>A.Ubaidillah S.Kom</td>
+      <td>PERANCANGAN DAN IMPLEMENTASI SISTEM DATABASE T...</td>
+      <td>Sistem  informasi  akademik  (SIAKAD) merupaka...</td>
+      <td>RPL</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>40411100476</td>
+      <td>M. Basith Ardianto,</td>
+      <td>APLIKASI KONTROL DAN MONITORING JARINGAN KOMPU...</td>
+      <td>Berjalannya koneksi jaringan komputer dengan l...</td>
+      <td>RPL</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>70411100070</td>
+      <td>Heri Supriyanto</td>
+      <td>SISTEM PENDUKUNG KEPUTUSAN OPTIMASI PENJADWALA...</td>
+      <td>Penjadwalan  kuliah  di  Perguruan  Tinggi  me...</td>
+      <td>Komputasi</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>80411100115</td>
+      <td>Septian Rahman Hakim</td>
+      <td>SISTEM AUGMENTED REALITY ANIMASI BENDA BERGERA...</td>
+      <td>Seiring perkembangan teknologi yang ada diduni...</td>
+      <td>Komputasi</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>70411100007</td>
+      <td>Adi Chandra Laksono</td>
+      <td>Gerak Pekerja Pada Game Real Time Strategy Men...</td>
+      <td>Gerak pekerja ada pada game yang memiliki genr...</td>
+      <td>RPL</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-5f04862a-e958-481a-af67-e6b6632a75b4')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+        
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+      
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-5f04862a-e958-481a-af67-e6b6632a75b4 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-5f04862a-e958-481a-af67-e6b6632a75b4');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+  </div></div>
+</div>
+</div>
+<div class="section" id="data-exploration">
+<h1>Data Exploration<a class="headerlink" href="#data-exploration" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># count nan value</span>
+<span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NIM        0
+Nama       0
+Judul      0
+Abstrak    3
+Kelas      0
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NIM        0
+Nama       0
+Judul      0
+Abstrak    0
+Kelas      0
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NIM        795
+Nama       795
+Judul      795
+Abstrak    795
+Kelas      795
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-b7120602-e7a3-4385-a2e5-24c392edcc6e">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>NIM</th>
+      <th>Nama</th>
+      <th>Judul</th>
+      <th>Abstrak</th>
+      <th>Kelas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>793</th>
+      <td>160411100032</td>
+      <td>Rachmad Agung Pambudi</td>
+      <td>PENERAPAN ALGORITMA LONG-SHORT TERM MEMORY UNT...</td>
+      <td>Investasi saham selama ini memiliki resiko ker...</td>
+      <td>NLP</td>
+    </tr>
+    <tr>
+      <th>794</th>
+      <td>160411100182</td>
+      <td>Nadila Hidayanti</td>
+      <td>SISTEM PENCARIAN TEKS AL-QURAN TERJEMAHAN BERB...</td>
+      <td>Information Retrieval (IR) merupakan pengambil...</td>
+      <td>Komputasi</td>
+    </tr>
+    <tr>
+      <th>795</th>
+      <td>160411100077</td>
+      <td>Afni Sakinah</td>
+      <td>KLASIFIKASI KOMPLEKSITAS VISUAL CITRA SAMPAH M...</td>
+      <td>Klasifikasi citra merupakan proses pengelompok...</td>
+      <td>Komputasi</td>
+    </tr>
+    <tr>
+      <th>796</th>
+      <td>160411100084</td>
+      <td>Friska Fatmawatiningrum</td>
+      <td>IDENTIFIKASI BINER ATRIBUT PEJALAN KAKI MENGGU...</td>
+      <td>Identifikasi atribut pejalan kaki merupakan sa...</td>
+      <td>NLP</td>
+    </tr>
+    <tr>
+      <th>797</th>
+      <td>160411100044</td>
+      <td>Dian Wibowo</td>
+      <td>DETEKSI OBJEK MANUSIA BERBASIS ONE STAGE DETEC...</td>
+      <td>Topik deteksi objek telah menarik perhatian ya...</td>
+      <td>Komputasi</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-b7120602-e7a3-4385-a2e5-24c392edcc6e')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+        
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+      
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-b7120602-e7a3-4385-a2e5-24c392edcc6e button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-b7120602-e7a3-4385-a2e5-24c392edcc6e');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+  </div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Jumlah data pada masing-masing label KBK</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Kelas&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Komputasi    417
+RPL          254
+NLP          124
+Name: Kelas, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Kelas&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;barh&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/daa61eec43d647ea9e543b02d397aca2a42a1f6822613c8db7f8b69c5b5468eb.png" src="_images/daa61eec43d647ea9e543b02d397aca2a42a1f6822613c8db7f8b69c5b5468eb.png" />
+</div>
+</div>
+</div>
+<div class="section" id="text-preprocessing">
+<h1>Text Preprocessing<a class="headerlink" href="#text-preprocessing" title="Permalink to this heading">#</a></h1>
+<div class="section" id="text-cleaning">
+<h2>Text Cleaning<a class="headerlink" href="#text-cleaning" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span><span class="o">,</span> <span class="nn">string</span>
+
+<span class="c1"># Text Cleaning</span>
+<span class="k">def</span> <span class="nf">cleaning</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="c1"># HTML Tag Removal</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;&lt;.*?&gt;|&amp;([a-z0-9]+|#[0-9]{1,6}|#x[0-9a-f]{1,6});&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+
+    <span class="c1"># Case folding</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+    <span class="c1"># Trim text</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+    <span class="c1"># Remove punctuations, karakter spesial, and spasi ganda</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;&lt;.*?&gt;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;[</span><span class="si">%s</span><span class="s1">]&#39;</span> <span class="o">%</span> <span class="n">re</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">punctuation</span><span class="p">))</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;\s+&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+
+    <span class="c1"># Number removal</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\[[0-9]*\]&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[^\w\s]&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">text</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\d&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\s+&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+
+    <span class="c1"># Mengubah text &#39;nan&#39; dengan whitespace agar nantinya dapat dihapus</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;nan&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">text</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Judul&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Judul&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">cleaning</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Abstrak&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Abstrak&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">cleaning</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-f2044ec5-86fc-48c3-a121-9803f17a54e8">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>NIM</th>
+      <th>Nama</th>
+      <th>Judul</th>
+      <th>Abstrak</th>
+      <th>Kelas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>40411100468</td>
+      <td>A.Ubaidillah S.Kom</td>
+      <td>perancangan dan implementasi sistem database t...</td>
+      <td>sistem informasi akademik siakad merupakan sis...</td>
+      <td>RPL</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>40411100476</td>
+      <td>M. Basith Ardianto,</td>
+      <td>aplikasi kontrol dan monitoring jaringan kompu...</td>
+      <td>berjalannya koneksi jaringan komputer dengan l...</td>
+      <td>RPL</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>70411100070</td>
+      <td>Heri Supriyanto</td>
+      <td>sistem pendukung keputusan optimasi penjadwala...</td>
+      <td>penjadwalan kuliah di perguruan tinggi merupak...</td>
+      <td>Komputasi</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>80411100115</td>
+      <td>Septian Rahman Hakim</td>
+      <td>sistem augmented reality animasi benda bergera...</td>
+      <td>seiring perkembangan teknologi yang ada diduni...</td>
+      <td>Komputasi</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>70411100007</td>
+      <td>Adi Chandra Laksono</td>
+      <td>gerak pekerja pada game real time strategy men...</td>
+      <td>gerak pekerja ada pada game yang memiliki genr...</td>
+      <td>RPL</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-f2044ec5-86fc-48c3-a121-9803f17a54e8')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+        
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+      
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-f2044ec5-86fc-48c3-a121-9803f17a54e8 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-f2044ec5-86fc-48c3-a121-9803f17a54e8');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+  </div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Checkpoint: Export Hasil Text Cleaning</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;pta-cleaning.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="remove-missing-values">
+<h2>Remove Missing Values<a class="headerlink" href="#remove-missing-values" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ubah empty string menjadi NaN value</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cek missing values</span>
+<span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NIM        0
+Nama       0
+Judul      0
+Abstrak    2
+Kelas      0
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Remove missing values</span>
+<span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>793
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="remove-duplicate-values">
+<h2>Remove Duplicate Values<a class="headerlink" href="#remove-duplicate-values" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cek apakah terdapat duplikasi data pada kolom judul</span>
+<span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Judul&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-f06852fe-7dc7-4f6e-961d-94fcfccd66d1">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>NIM</th>
+      <th>Nama</th>
+      <th>Judul</th>
+      <th>Abstrak</th>
+      <th>Kelas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>673</th>
+      <td>120411100015</td>
+      <td>Abdul Ainur Rofik</td>
+      <td>sistem pendukung keputusan pemilihan pemain bo...</td>
+      <td>peningkatan pembinaan permai bola voli terutam...</td>
+      <td>Komputasi</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-f06852fe-7dc7-4f6e-961d-94fcfccd66d1')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+        
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+      
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-f06852fe-7dc7-4f6e-961d-94fcfccd66d1 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-f06852fe-7dc7-4f6e-961d-94fcfccd66d1');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+  </div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Remove duplicates judul</span>
+<span class="n">df</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Judul&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Cek apakah masih terdapat duplikasi data pada kolom judul</span>
+<span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Judul&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-045e0afe-3864-46f6-a773-b547e2af9031">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>NIM</th>
+      <th>Nama</th>
+      <th>Judul</th>
+      <th>Abstrak</th>
+      <th>Kelas</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-045e0afe-3864-46f6-a773-b547e2af9031')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+        
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+      
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-045e0afe-3864-46f6-a773-b547e2af9031 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-045e0afe-3864-46f6-a773-b547e2af9031');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+  </div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cek apakah terdapat duplikasi data pada kolom abstrak</span>
+<span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Abstrak&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-140befc9-2cdd-44e4-99d8-f59e129e7d95">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>NIM</th>
+      <th>Nama</th>
+      <th>Judul</th>
+      <th>Abstrak</th>
+      <th>Kelas</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-140befc9-2cdd-44e4-99d8-f59e129e7d95')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+        
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+      
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-140befc9-2cdd-44e4-99d8-f59e129e7d95 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-140befc9-2cdd-44e4-99d8-f59e129e7d95');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+  </div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Remove duplicates abstrak</span>
+<span class="n">df</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Abstrak&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Cek apakah masih terdapat duplikasi data pada kolom abstrak</span>
+<span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Abstrak&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-6dd56c87-ce2d-4d7c-84b2-f3a65b1632d9">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>NIM</th>
+      <th>Nama</th>
+      <th>Judul</th>
+      <th>Abstrak</th>
+      <th>Kelas</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-6dd56c87-ce2d-4d7c-84b2-f3a65b1632d9')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+        
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+      
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-6dd56c87-ce2d-4d7c-84b2-f3a65b1632d9 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-6dd56c87-ce2d-4d7c-84b2-f3a65b1632d9');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+  </div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Checkpoint: Export Hasil Preprocessing</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;preprocessed-pta.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Distribusi Kelas setelah Text Preprocessing</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Kelas&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;barh&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/711ce3d22a4a4bd148fa32c4f00539647e718aaac2908e0ec738a8a68d5adc55.png" src="_images/711ce3d22a4a4bd148fa32c4f00539647e718aaac2908e0ec738a8a68d5adc55.png" />
+</div>
+</div>
+</div>
+<div class="section" id="tokenization">
+<h2>Tokenization<a class="headerlink" href="#tokenization" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">word_tokenize</span>
+<span class="kn">import</span> <span class="nn">nltk</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;punkt&#39;</span><span class="p">)</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;stopwords&#39;</span><span class="p">)</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;corpus&#39;</span><span class="p">)</span>
+
+<span class="c1"># Tokenizing Judul</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;judul_tokens&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Judul&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">df</span><span class="p">[[</span><span class="s2">&quot;Judul&quot;</span><span class="p">,</span> <span class="s2">&quot;judul_tokens&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data] Downloading package punkt to /root/nltk_data...
+[nltk_data]   Unzipping tokenizers/punkt.zip.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data] Downloading package stopwords to /root/nltk_data...
+[nltk_data]   Unzipping corpora/stopwords.zip.
+[nltk_data] Error loading corpus: Package &#39;corpus&#39; not found in index
+</pre></div>
+</div>
+<div class="output text_html">
+  <div id="df-6d12fcd5-f9c8-4de6-b611-6d1a6339dfff">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Judul</th>
+      <th>judul_tokens</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>perancangan dan implementasi sistem database t...</td>
+      <td>[perancangan, dan, implementasi, sistem, datab...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>aplikasi kontrol dan monitoring jaringan kompu...</td>
+      <td>[aplikasi, kontrol, dan, monitoring, jaringan,...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>sistem pendukung keputusan optimasi penjadwala...</td>
+      <td>[sistem, pendukung, keputusan, optimasi, penja...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>sistem augmented reality animasi benda bergera...</td>
+      <td>[sistem, augmented, reality, animasi, benda, b...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>gerak pekerja pada game real time strategy men...</td>
+      <td>[gerak, pekerja, pada, game, real, time, strat...</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-6d12fcd5-f9c8-4de6-b611-6d1a6339dfff')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+        
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+      
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-6d12fcd5-f9c8-4de6-b611-6d1a6339dfff button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-6d12fcd5-f9c8-4de6-b611-6d1a6339dfff');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+  </div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tokenizing Abstrak</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;abstrak_tokens&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Abstrak&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">df</span><span class="p">[[</span><span class="s2">&quot;Abstrak&quot;</span><span class="p">,</span> <span class="s2">&quot;abstrak_tokens&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-ab2c5d61-c23b-41cd-becc-6a0e2d11ed45">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Abstrak</th>
+      <th>abstrak_tokens</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>sistem informasi akademik siakad merupakan sis...</td>
+      <td>[sistem, informasi, akademik, siakad, merupaka...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>berjalannya koneksi jaringan komputer dengan l...</td>
+      <td>[berjalannya, koneksi, jaringan, komputer, den...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>penjadwalan kuliah di perguruan tinggi merupak...</td>
+      <td>[penjadwalan, kuliah, di, perguruan, tinggi, m...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>seiring perkembangan teknologi yang ada diduni...</td>
+      <td>[seiring, perkembangan, teknologi, yang, ada, ...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>gerak pekerja ada pada game yang memiliki genr...</td>
+      <td>[gerak, pekerja, ada, pada, game, yang, memili...</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-ab2c5d61-c23b-41cd-becc-6a0e2d11ed45')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+        
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+      
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-ab2c5d61-c23b-41cd-becc-6a0e2d11ed45 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-ab2c5d61-c23b-41cd-becc-6a0e2d11ed45');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+  </div></div>
+</div>
+</div>
+<div class="section" id="stop-words-removal">
+<h2>Stop Words Removal<a class="headerlink" href="#stop-words-removal" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">stopwords</span> 
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">chain</span>
+
+<span class="n">stop_words</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">chain</span><span class="p">(</span><span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s1">&#39;indonesian&#39;</span><span class="p">),</span> <span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s1">&#39;english&#39;</span><span class="p">)))</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;judul_tokens&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;judul_tokens&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">[</span><span class="n">w</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">x</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">stop_words</span><span class="p">])</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;abstrak_tokens&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;abstrak_tokens&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">[</span><span class="n">w</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">x</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">stop_words</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[[</span><span class="s2">&quot;Judul&quot;</span><span class="p">,</span> <span class="s2">&quot;judul_tokens&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-c687a3f2-09bc-45d7-90c6-a3e8bd6c5dd7">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Judul</th>
+      <th>judul_tokens</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>perancangan dan implementasi sistem database t...</td>
+      <td>[perancangan, implementasi, sistem, database, ...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>aplikasi kontrol dan monitoring jaringan kompu...</td>
+      <td>[aplikasi, kontrol, monitoring, jaringan, komp...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>sistem pendukung keputusan optimasi penjadwala...</td>
+      <td>[sistem, pendukung, keputusan, optimasi, penja...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>sistem augmented reality animasi benda bergera...</td>
+      <td>[sistem, augmented, reality, animasi, benda, b...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>gerak pekerja pada game real time strategy men...</td>
+      <td>[gerak, pekerja, game, real, time, strategy, f...</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-c687a3f2-09bc-45d7-90c6-a3e8bd6c5dd7')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+        
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+      
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-c687a3f2-09bc-45d7-90c6-a3e8bd6c5dd7 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-c687a3f2-09bc-45d7-90c6-a3e8bd6c5dd7');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+  </div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[[</span><span class="s2">&quot;Abstrak&quot;</span><span class="p">,</span> <span class="s2">&quot;abstrak_tokens&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-dee0ebb5-af8b-4b3d-94b2-353fcbb2cf92">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Abstrak</th>
+      <th>abstrak_tokens</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>sistem informasi akademik siakad merupakan sis...</td>
+      <td>[sistem, informasi, akademik, siakad, sistem, ...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>berjalannya koneksi jaringan komputer dengan l...</td>
+      <td>[berjalannya, koneksi, jaringan, komputer, lan...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>penjadwalan kuliah di perguruan tinggi merupak...</td>
+      <td>[penjadwalan, kuliah, perguruan, kompleks, per...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>seiring perkembangan teknologi yang ada diduni...</td>
+      <td>[seiring, perkembangan, teknologi, didunia, mu...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>gerak pekerja ada pada game yang memiliki genr...</td>
+      <td>[gerak, pekerja, game, memiliki, genre, rts, r...</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-dee0ebb5-af8b-4b3d-94b2-353fcbb2cf92')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+        
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+      
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-dee0ebb5-af8b-4b3d-94b2-353fcbb2cf92 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-dee0ebb5-af8b-4b3d-94b2-353fcbb2cf92');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+  </div></div>
+</div>
+</div>
+<div class="section" id="stemming">
+<h2>Stemming<a class="headerlink" href="#stemming" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>sastrawi
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
+Collecting sastrawi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading Sastrawi-1.0.1-py2.py3-none-any.whl (209 kB)
+?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/209.7 KB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺ <span class=" -Color -Color-Green">204.8/209.7 KB</span> <span class=" -Color -Color-Red">6.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">209.7/209.7 KB</span> <span class=" -Color -Color-Red">4.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25h
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: sastrawi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed sastrawi-1.0.1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">Sastrawi.Stemmer.StemmerFactory</span> <span class="kn">import</span> <span class="n">StemmerFactory</span>
+<span class="kn">from</span> <span class="nn">tqdm.auto</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<span class="n">tqdm</span><span class="o">.</span><span class="n">pandas</span><span class="p">()</span>
+
+<span class="n">factory</span> <span class="o">=</span> <span class="n">StemmerFactory</span><span class="p">()</span>
+<span class="n">stemmer</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="n">create_stemmer</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Stemming judul</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;judul_tokens&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;judul_tokens&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">progress_apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">stemmer</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "90fbbf433799472289ce2d3ba73141b7"}</script><div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">KeyboardInterrupt</span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-30-e0b86e6d011c&gt;</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Stemming judul</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;judul_tokens&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;judul_tokens&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">progress_apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">stemmer</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">))</span>
+
+<span class="nn">/usr/local/lib/python3.9/dist-packages/tqdm/std.py</span> in <span class="ni">inner</span><span class="nt">(df, func, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">803</span>                 <span class="c1"># on the df using our wrapper (which provides bar updating)</span>
+<span class="g g-Whitespace">    </span><span class="mi">804</span>                 <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">805</span>                     <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">df_function</span><span class="p">)(</span><span class="n">wrapper</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">806</span>                 <span class="k">finally</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">807</span>                     <span class="n">t</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="nn">/usr/local/lib/python3.9/dist-packages/pandas/core/series.py</span> in <span class="ni">apply</span><span class="nt">(self, func, convert_dtype, args, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4431</span>         <span class="n">dtype</span><span class="p">:</span> <span class="n">float64</span>
+<span class="g g-Whitespace">   </span><span class="mi">4432</span><span class="w">         </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">4433</span><span class="sd">         return SeriesApply(self, func, convert_dtype, args, kwargs).apply()</span>
+<span class="g g-Whitespace">   </span><span class="mi">4434</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">4435</span><span class="sd">     def _reduce(</span>
+
+<span class="nn">/usr/local/lib/python3.9/dist-packages/pandas/core/apply.py</span> in <span class="ni">apply</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1086</span><span class="sd">             return self.apply_str()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1087</span><span class="sd"> </span>
+<span class="ne">-&gt; </span><span class="mi">1088</span><span class="sd">         return self.apply_standard()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1089</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1090</span><span class="sd">     def agg(self):</span>
+
+<span class="nn">/usr/local/lib/python3.9/dist-packages/pandas/core/apply.py</span> in <span class="ni">apply_standard</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1141</span><span class="sd">                 # List[Union[Callable[..., Any], str]]]]]&quot;; expected</span>
+<span class="g g-Whitespace">   </span><span class="mi">1142</span><span class="sd">                 # &quot;Callable[[Any], Any]&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1143</span><span class="sd">                 mapped = lib.map_infer(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1144</span><span class="sd">                     values,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1145</span><span class="sd">                     f,  # type: ignore[arg-type]</span>
+
+<span class="nn">/usr/local/lib/python3.9/dist-packages/pandas/_libs/lib.pyx</span> in <span class="ni">pandas._libs.lib.map_infer</span><span class="nt">()</span>
+
+<span class="nn">/usr/local/lib/python3.9/dist-packages/tqdm/std.py</span> in <span class="ni">wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">798</span><span class="sd">                     # take a fast or slow code path; so stop when t.total==t.n</span>
+<span class="g g-Whitespace">    </span><span class="mi">799</span><span class="sd">                     t.update(n=1 if not t.total or t.n &lt; t.total else 0)</span>
+<span class="ne">--&gt; </span><span class="mi">800</span><span class="sd">                     return func(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">801</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">802</span><span class="sd">                 # Apply the provided function (in **kwargs)</span>
+
+<span class="nn">&lt;ipython-input-30-e0b86e6d011c&gt;</span> in <span class="ni">&lt;lambda&gt;</span><span class="nt">(x)</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span><span class="sd"> # Stemming judul</span>
+<span class="ne">----&gt; </span><span class="mi">2</span><span class="sd"> df[&#39;judul_tokens&#39;] = df[&#39;judul_tokens&#39;].progress_apply(lambda x: stemmer.stem(&#39; &#39;.join(x)).split(&#39; &#39;))</span>
+
+<span class="nn">/usr/local/lib/python3.9/dist-packages/Sastrawi/Stemmer/CachedStemmer.py</span> in <span class="ni">stem</span><span class="nt">(self, text)</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span><span class="sd">                 stems.append(self.cache.get(word))</span>
+<span class="g g-Whitespace">     </span><span class="mi">19</span><span class="sd">             else:</span>
+<span class="ne">---&gt; </span><span class="mi">20</span><span class="sd">                 stem = self.delegatedStemmer.stem(word)</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span><span class="sd">                 self.cache.set(word, stem)</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span><span class="sd">                 stems.append(stem)</span>
+
+<span class="nn">/usr/local/lib/python3.9/dist-packages/Sastrawi/Stemmer/Stemmer.py</span> in <span class="ni">stem</span><span class="nt">(self, text)</span>
+<span class="g g-Whitespace">     </span><span class="mi">25</span><span class="sd"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">26</span><span class="sd">         for word in words:</span>
+<span class="ne">---&gt; </span><span class="mi">27</span><span class="sd">             stems.append(self.stem_word(word))</span>
+<span class="g g-Whitespace">     </span><span class="mi">28</span><span class="sd"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">29</span><span class="sd">         return &#39; &#39;.join(stems)</span>
+
+<span class="nn">/usr/local/lib/python3.9/dist-packages/Sastrawi/Stemmer/Stemmer.py</span> in <span class="ni">stem_word</span><span class="nt">(self, word)</span>
+<span class="g g-Whitespace">     </span><span class="mi">34</span><span class="sd">             return self.stem_plural_word(word)</span>
+<span class="g g-Whitespace">     </span><span class="mi">35</span><span class="sd">         else:</span>
+<span class="ne">---&gt; </span><span class="mi">36</span><span class="sd">             return self.stem_singular_word(word)</span>
+<span class="g g-Whitespace">     </span><span class="mi">37</span><span class="sd"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">38</span><span class="sd">     def is_plural(self, word):</span>
+
+<span class="nn">/usr/local/lib/python3.9/dist-packages/Sastrawi/Stemmer/Stemmer.py</span> in <span class="ni">stem_singular_word</span><span class="nt">(self, word)</span>
+<span class="g g-Whitespace">     </span><span class="mi">82</span><span class="sd">         &quot;&quot;&quot;</span><span class="n">Stem</span> <span class="n">a</span> <span class="n">singular</span> <span class="n">word</span> <span class="n">to</span> <span class="n">its</span> <span class="n">common</span> <span class="n">stem</span> <span class="n">form</span><span class="o">.</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">83</span><span class="s2">         context = Context(word, self.dictionary, self.visitor_provider)</span>
+<span class="ne">---&gt; </span><span class="mi">84</span><span class="s2">         context.execute()</span>
+<span class="g g-Whitespace">     </span><span class="mi">85</span><span class="s2"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">86</span><span class="s2">         return context.result</span>
+
+<span class="nn">/usr/local/lib/python3.9/dist-packages/Sastrawi/Stemmer/Context/Context.py</span> in <span class="ni">execute</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">     </span><span class="mi">35</span><span class="s2"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">36</span><span class="s2">         #step 1 - 5</span>
+<span class="ne">---&gt; </span><span class="mi">37</span><span class="s2">         self.start_stemming_process()</span>
+<span class="g g-Whitespace">     </span><span class="mi">38</span><span class="s2"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">39</span><span class="s2">         #step 6</span>
+
+<span class="nn">/usr/local/lib/python3.9/dist-packages/Sastrawi/Stemmer/Context/Context.py</span> in <span class="ni">start_stemming_process</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">     </span><span class="mi">78</span><span class="s2"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">79</span><span class="s2">         #step 4, 5</span>
+<span class="ne">---&gt; </span><span class="mi">80</span><span class="s2">         self.remove_prefixes()</span>
+<span class="g g-Whitespace">     </span><span class="mi">81</span><span class="s2">         if self.dictionary.contains(self.current_word):</span>
+<span class="g g-Whitespace">     </span><span class="mi">82</span><span class="s2">             return</span>
+
+<span class="nn">/usr/local/lib/python3.9/dist-packages/Sastrawi/Stemmer/Context/Context.py</span> in <span class="ni">remove_prefixes</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">     </span><span class="mi">87</span><span class="s2">     def remove_prefixes(self):</span>
+<span class="g g-Whitespace">     </span><span class="mi">88</span><span class="s2">         for i in range(3):</span>
+<span class="ne">---&gt; </span><span class="mi">89</span><span class="s2">             self.accept_prefix_visitors(self.prefix_pisitors)</span>
+<span class="g g-Whitespace">     </span><span class="mi">90</span><span class="s2">             if self.dictionary.contains(self.current_word):</span>
+<span class="g g-Whitespace">     </span><span class="mi">91</span><span class="s2">                 return</span>
+
+<span class="nn">/usr/local/lib/python3.9/dist-packages/Sastrawi/Stemmer/Context/Context.py</span> in <span class="ni">accept_prefix_visitors</span><span class="nt">(self, visitors)</span>
+<span class="g g-Whitespace">    </span><span class="mi">109</span><span class="s2">         for visitor in visitors:</span>
+<span class="g g-Whitespace">    </span><span class="mi">110</span><span class="s2">             self.accept(visitor)</span>
+<span class="ne">--&gt; </span><span class="mi">111</span><span class="s2">             if self.dictionary.contains(self.current_word):</span>
+<span class="g g-Whitespace">    </span><span class="mi">112</span><span class="s2">                 return self.current_word</span>
+<span class="g g-Whitespace">    </span><span class="mi">113</span><span class="s2">             if self.process_is_stopped:</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hasil stemming judul</span>
+<span class="c1"># df[&#39;judul&#39;].head()</span>
+<span class="n">df</span><span class="p">[[</span><span class="s2">&quot;Judul&quot;</span><span class="p">,</span> <span class="s2">&quot;judul_tokens&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-cdd2ba7a-ef2e-4abc-ae16-92775c76130e">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Judul</th>
+      <th>judul_tokens</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>perancangan dan implementasi sistem database t...</td>
+      <td>[ancang, implementasi, sistem, database, distr...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>aplikasi kontrol dan monitoring jaringan kompu...</td>
+      <td>[aplikasi, kontrol, monitoring, jaring, komput...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>sistem pendukung keputusan optimasi penjadwala...</td>
+      <td>[sistem, dukung, putus, optimasi, jadwal, mata...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>sistem augmented reality animasi benda bergera...</td>
+      <td>[sistem, augmented, reality, animasi, benda, g...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>gerak pekerja pada game real time strategy men...</td>
+      <td>[gerak, kerja, game, real, time, strategy, fin...</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-cdd2ba7a-ef2e-4abc-ae16-92775c76130e')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+        
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+      
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-cdd2ba7a-ef2e-4abc-ae16-92775c76130e button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-cdd2ba7a-ef2e-4abc-ae16-92775c76130e');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+  </div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Stemming abstrak</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;abstrak_tokens&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;abstrak_tokens&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">progress_apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">stemmer</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "d725de7fdc8e47aead8cc5fc5d92ca92"}</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hasil stemming abstrak</span>
+<span class="n">df</span><span class="p">[[</span><span class="s2">&quot;Abstrak&quot;</span><span class="p">,</span> <span class="s2">&quot;abstrak_tokens&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="export-cleaned-data">
+<h2>Export Cleaned Data<a class="headerlink" href="#export-cleaned-data" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;judul_tokens&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;judul_tokens&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;abstrak_tokens&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;abstrak_tokens&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;cleaned-data-kelas.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>##Import Data Hasil Ekstraksi</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/sholehhuddin/psd/main/cleaned-data-kelas.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;abstrak_tokens&#39;</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Kelas&#39;</span><span class="p">]</span>
+
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">TfidfVectorizer</span>
+<span class="n">vectorizer</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">()</span>
+
+<span class="n">X_train_tfidf</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+<span class="n">X_test_tfidf</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="n">X_train_tfidf</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>##PreProcessing PCA</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
+<span class="c1"># </span>
+<span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">X_train</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train_tfidf</span><span class="o">.</span><span class="n">toarray</span><span class="p">())</span>
+<span class="n">X_test</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test_tfidf</span><span class="o">.</span><span class="n">toarray</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>##Modelling</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
+
+
+<span class="n">knn</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">knn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">)</span>
+<span class="n">hasil</span> <span class="o">=</span> <span class="n">knn</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hasil</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.naive_bayes</span> <span class="kn">import</span> <span class="n">GaussianNB</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">make_scorer</span><span class="p">,</span> <span class="n">accuracy_score</span><span class="p">,</span><span class="n">precision_score</span>
+
+<span class="n">gaussian</span> <span class="o">=</span> <span class="n">GaussianNB</span><span class="p">()</span>
+<span class="n">gaussian</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">Y_pred</span> <span class="o">=</span> <span class="n">gaussian</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span> 
+<span class="n">accuracy_nb</span><span class="o">=</span><span class="nb">round</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">Y_pred</span><span class="p">)</span><span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">acc_gaussian</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">gaussian</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="n">accuracy</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">Y_pred</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">accuracy</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Crawling data PTA</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#load-data">Load Data</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-exploration">Data Exploration</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#text-preprocessing">Text Preprocessing</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#text-cleaning">Text Cleaning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-missing-values">Remove Missing Values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-duplicate-values">Remove Duplicate Values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenization">Tokenization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stop-words-removal">Stop Words Removal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stemming">Stemming</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#export-cleaned-data">Export Cleaned Data</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
