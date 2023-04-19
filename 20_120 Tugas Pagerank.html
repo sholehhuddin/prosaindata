@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>1. Buat graph berarah dengan networkx (minimal 9 node ) &#8212; Mohammad Sholeh Huddin</title>
+    <title>Tugas Pagerank &#8212; Mohammad Sholeh Huddin</title>
   
   
   
@@ -158,9 +158,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Tugas1.html"><strong>CRAWLING DATA TUGAS 1</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="Tugas2DataIris.html"><strong>GET DATA IRIS</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="20-20_UTS_PSD.html"><strong>UTS PROSAINDATA</strong></a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Buat graph berarah dengan networkx (minimal 9 node )</a></li>
-
-
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Tugas Pagerank</strong></a></li>
 </ul>
 
     </div>
@@ -344,7 +342,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>1. Buat graph berarah dengan networkx (minimal 9 node )</h1>
+    <h1>Tugas Pagerank</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -354,11 +352,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">1. Buat graph berarah dengan networkx (minimal 9 node )</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-manual-pagerank">Perhitungan manual pagerank</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pagerank-menggunakan-networkx">Pagerank menggunakan networkx</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buat-graph-berarah-dengan-networkx-minimal-9-node">1. Buat graph berarah dengan networkx (minimal 9 node )</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-manual-pagerank">Perhitungan manual pagerank</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pagerank-menggunakan-networkx">Pagerank menggunakan networkx</a></li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -369,7 +366,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <p><strong>#Tugas Pagerank</strong></p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="tugas-pagerank">
+<h1><strong>Tugas Pagerank</strong><a class="headerlink" href="#tugas-pagerank" title="Permalink to this heading">#</a></h1>
 <p>Tugas :</p>
 <p>Buat graph berarah dengan networkx (minimal 9 node )</p>
 <p>Hitung manual pagerank dari graph yang anda buat</p>
@@ -387,7 +385,7 @@ document.write(`
 </div>
 </div>
 <div class="section" id="buat-graph-berarah-dengan-networkx-minimal-9-node">
-<h1>1. Buat graph berarah dengan networkx (minimal 9 node )<a class="headerlink" href="#buat-graph-berarah-dengan-networkx-minimal-9-node" title="Permalink to this heading">#</a></h1>
+<h2>1. Buat graph berarah dengan networkx (minimal 9 node )<a class="headerlink" href="#buat-graph-berarah-dengan-networkx-minimal-9-node" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># membuat objek grafik kosong</span>
@@ -423,12 +421,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/134b42a3264046960dfe89ce1ab59d32e219157cb2d6cca0de93d6f6222289d5.png" src="_images/134b42a3264046960dfe89ce1ab59d32e219157cb2d6cca0de93d6f6222289d5.png" />
+<img alt="_images/e73ff2cc734ea4bb136cc2ed6638b9142c190d8b864c8c70a1aa56336371697e.png" src="_images/e73ff2cc734ea4bb136cc2ed6638b9142c190d8b864c8c70a1aa56336371697e.png" />
 </div>
 </div>
 </div>
 <div class="section" id="perhitungan-manual-pagerank">
-<h1>Perhitungan manual pagerank<a class="headerlink" href="#perhitungan-manual-pagerank" title="Permalink to this heading">#</a></h1>
+<h2>Perhitungan manual pagerank<a class="headerlink" href="#perhitungan-manual-pagerank" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># menghitung PageRank secara manual</span>
@@ -456,7 +454,7 @@ document.write(`
 </div>
 </div>
 <div class="section" id="pagerank-menggunakan-networkx">
-<h1>Pagerank menggunakan networkx<a class="headerlink" href="#pagerank-menggunakan-networkx" title="Permalink to this heading">#</a></h1>
+<h2>Pagerank menggunakan networkx<a class="headerlink" href="#pagerank-menggunakan-networkx" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pr</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">pagerank</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.85</span><span class="p">)</span>
@@ -467,6 +465,7 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hitung Networkx Pagerank {1: 0.03161418146466325, 2: 0.04353872091163043, 3: 0.035170623054109604, 4: 0.035170623054109604, 5: 0.2952422202251482, 6: 0.14214284729431512, 7: 0.13748896835085428, 8: 0.14214284729431512, 9: 0.13748896835085428}
 </pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -530,11 +529,10 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">1. Buat graph berarah dengan networkx (minimal 9 node )</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-manual-pagerank">Perhitungan manual pagerank</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pagerank-menggunakan-networkx">Pagerank menggunakan networkx</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buat-graph-berarah-dengan-networkx-minimal-9-node">1. Buat graph berarah dengan networkx (minimal 9 node )</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-manual-pagerank">Perhitungan manual pagerank</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pagerank-menggunakan-networkx">Pagerank menggunakan networkx</a></li>
 </ul>
-
   </nav></div>
 
 </div></div>
