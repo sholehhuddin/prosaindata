@@ -356,6 +356,14 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-manual-pagerank">Perhitungan manual pagerank</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pagerank-menggunakan-networkx">Pagerank menggunakan networkx</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasiikan-ulang">2. Implementasiikan ulang</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fungsi-membaca-dokumen">Fungsi membaca dokumen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fungsi-melakukan-tokenisasi-pada-dokumen">Fungsi melakukan tokenisasi pada dokumen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#membaca-dokumen">Membaca dokumen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#print-elemen-dalam-list">Print elemen dalam list</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-term-document-matrix">Generate term-document matrix</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menentukan-rank-untuk-setiap-kaliman-menggunakan-textrank">Menentukan Rank untuk setiap kaliman Menggunakan textrank</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menemukan-kalimat-penting-fan-menentukan-kesimpulan">Menemukan kalimat penting fan menentukan kesimpulan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menjadikan-kesimpulan-ke-dal">Menjadikan Kesimpulan ke dal</a></li>
 </ul>
             </nav>
         </div>
@@ -422,7 +430,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/0aba8874d677750798938bd342863343255c3983af6005c16453ad5d5f4b4ed7.png" src="_images/0aba8874d677750798938bd342863343255c3983af6005c16453ad5d5f4b4ed7.png" />
+<img alt="_images/861cdd3ae4b114ac57a453a1ee52842c239c0b343552dfdf2f4246190fdc8fb1.png" src="_images/861cdd3ae4b114ac57a453a1ee52842c239c0b343552dfdf2f4246190fdc8fb1.png" />
 </div>
 </div>
 </div>
@@ -481,20 +489,8 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting PyPDF2
-  Downloading pypdf2-3.0.1-py3-none-any.whl (232 kB)
-?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/232.6 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━ <span class=" -Color -Color-Green">194.6/232.6 kB</span> <span class=" -Color -Color-Red">5.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">232.6/232.6 kB</span> <span class=" -Color -Color-Red">4.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hRequirement already satisfied: typing_extensions&gt;=3.10.0.0 in /usr/local/lib/python3.9/dist-packages (from PyPDF2) (4.5.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: PyPDF2
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed PyPDF2-3.0.1
+Requirement already satisfied: PyPDF2 in /usr/local/lib/python3.9/dist-packages (3.0.1)
+Requirement already satisfied: typing_extensions&gt;=3.10.0.0 in /usr/local/lib/python3.9/dist-packages (from PyPDF2) (4.5.0)
 </pre></div>
 </div>
 </div>
@@ -507,24 +503,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
-Collecting docx2txt
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading docx2txt-0.8.tar.gz (2.8 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Preparing metadata (setup.py) ... ?25l?25hdone
-Building wheels for collected packages: docx2txt
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Building wheel for docx2txt (setup.py) ... ?25l?25hdone
-  Created wheel for docx2txt: filename=docx2txt-0.8-py3-none-any.whl size=3977 sha256=8393831efc06e0cf376f7b79b1c1b864f6ee9a439e8db647eb72f5829c57804e
-  Stored in directory: /root/.cache/pip/wheels/40/75/01/e6c444034338bde9c7947d3467807f889123465c2371e77418
-Successfully built docx2txt
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: docx2txt
-Successfully installed docx2txt-0.8
+Requirement already satisfied: docx2txt in /usr/local/lib/python3.9/dist-packages (0.8)
 </pre></div>
 </div>
 </div>
@@ -544,6 +523,9 @@ Successfully installed docx2txt-0.8
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="fungsi-membaca-dokumen">
+<h2>Fungsi membaca dokumen<a class="headerlink" href="#fungsi-membaca-dokumen" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">readDoc</span><span class="p">():</span>
@@ -586,6 +568,9 @@ Successfully installed docx2txt-0.8
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="fungsi-melakukan-tokenisasi-pada-dokumen">
+<h2>Fungsi melakukan tokenisasi pada dokumen<a class="headerlink" href="#fungsi-melakukan-tokenisasi-pada-dokumen" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">tokenize</span><span class="p">(</span><span class="n">document</span><span class="p">):</span>
@@ -602,44 +587,29 @@ Successfully installed docx2txt-0.8
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="membaca-dokumen">
+<h2>Membaca dokumen<a class="headerlink" href="#membaca-dokumen" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># reading a file and </span>
-<span class="c1"># printing the size of the file</span>
-<span class="n">document</span> <span class="o">=</span> <span class="n">readDoc</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">readDoc</span><span class="p">(</span><span class="n">story</span><span class="p">):</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">story</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+        <span class="n">document</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">document</span>
+
+<span class="n">document</span> <span class="o">=</span> <span class="n">readDoc</span><span class="p">(</span><span class="s1">&#39;/content/drive/MyDrive/prosaindata/tugas/story.txt&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The length of the file is:&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">document</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">StdinNotImplementedError</span>Traceback (most recent call last)
-<span class="nn">&lt;ipython-input-10-3d2a36d056b4&gt;</span> in <span class="ni">&lt;cell line: 3&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># reading a file and</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1"># printing the size of the file</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">document</span> <span class="o">=</span> <span class="n">readDoc</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The length of the file is:&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">document</span><span class="p">))</span>
-
-<span class="nn">&lt;ipython-input-8-f5becff9172e&gt;</span> in <span class="ni">readDoc</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">readDoc</span><span class="p">():</span>
-<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Please input a file name: &#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You have asked for the document </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> 
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="c1"># now read the type of document</span>
-
-<span class="nn">/usr/local/lib/python3.9/dist-packages/ipykernel/kernelbase.py</span> in <span class="ni">raw_input</span><span class="nt">(self, prompt)</span>
-<span class="g g-Whitespace">    </span><span class="mi">846</span>         <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">847</span><span class="s2">         if not self._allow_stdin:</span>
-<span class="ne">--&gt; </span><span class="mi">848</span><span class="s2">             raise StdinNotImplementedError(</span>
-<span class="g g-Whitespace">    </span><span class="mi">849</span><span class="s2">                 &quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">850</span><span class="s2">             )</span>
-
-<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The length of the file is: 699
 </pre></div>
 </div>
 </div>
 </div>
+<p>Generate list pada setiap kata</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sentences_list</span> <span class="o">=</span> <span class="n">tokenize</span><span class="p">(</span><span class="n">document</span><span class="p">)</span>
@@ -652,7 +622,16 @@ Successfully installed docx2txt-0.8
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The size of the list in Bytes is: 112
+The size of the item 0 in Bytes is: 151
+</pre></div>
 </div>
+</div>
+</div>
+</div>
+<div class="section" id="print-elemen-dalam-list">
+<h2>Print elemen dalam list<a class="headerlink" href="#print-elemen-dalam-list" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">sentences_list</span><span class="p">:</span>
@@ -660,7 +639,21 @@ Successfully installed docx2txt-0.8
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pagi ini, saya bangun lebih awal dari biasanya dan memutuskan untuk menghabiskan waktu di tengah alam.
+Saya pergi ke sebuah taman yang terletak di pinggiran kota, yang memiliki pemandangan indah dan suasana yang tenang.
+Ketika saya tiba di taman, matahari baru saja mulai muncul dari balik gunung dan sinarnya menyebar di sekitar taman.
+Saya melihat rumput hijau yang subur dan bunga-bunga yang bermekaran di sekitar saya.
+Udara segar dan bersih membuat saya merasa segar dan berenergi.
+Saya berjalan-jalan di sekitar taman dan menikmati keindahan pemandangan yang dikelilingi oleh pepohonan hijau.
+Saya mendengarkan suara burung bernyanyi dan merasakan angin yang lembut berhembus di wajah saya.
+</pre></div>
 </div>
+</div>
+</div>
+</div>
+<div class="section" id="generate-term-document-matrix">
+<h2>Generate term-document matrix<a class="headerlink" href="#generate-term-document-matrix" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cv</span> <span class="o">=</span> <span class="n">CountVectorizer</span><span class="p">()</span>
@@ -684,6 +677,13 @@ Successfully installed docx2txt-0.8
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Result demo array is [[0 1 1 1 1 1 0 1]
+ [1 0 0 1 0 0 1 0]]
+Feature list: [&#39;am&#39; &#39;are&#39; &#39;ashish&#39; &#39;bad&#39; &#39;good&#39; &#39;is&#39; &#39;not&#39; &#39;you&#39;]
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -695,6 +695,38 @@ Successfully installed docx2txt-0.8
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The data type of bow matrix &lt;class &#39;scipy.sparse._csr.csr_matrix&#39;&gt;
+Shape of the matrix &lt;bound method spmatrix.get_shape of &lt;7x69 sparse matrix of type &#39;&lt;class &#39;numpy.int64&#39;&gt;&#39;
+	with 96 stored elements in Compressed Sparse Row format&gt;&gt;
+Size of the matrix is: 48
+[&#39;alam&#39; &#39;angin&#39; &#39;awal&#39; &#39;balik&#39; &#39;bangun&#39; &#39;baru&#39; &#39;berenergi&#39; &#39;berhembus&#39;
+ &#39;berjalan&#39; &#39;bermekaran&#39; &#39;bernyanyi&#39; &#39;bersih&#39; &#39;biasanya&#39; &#39;bunga&#39; &#39;burung&#39;
+ &#39;dan&#39; &#39;dari&#39; &#39;di&#39; &#39;dikelilingi&#39; &#39;gunung&#39; &#39;hijau&#39; &#39;indah&#39; &#39;ini&#39; &#39;jalan&#39;
+ &#39;ke&#39; &#39;keindahan&#39; &#39;ketika&#39; &#39;kota&#39; &#39;lebih&#39; &#39;lembut&#39; &#39;matahari&#39; &#39;melihat&#39;
+ &#39;membuat&#39; &#39;memiliki&#39; &#39;memutuskan&#39; &#39;mendengarkan&#39; &#39;menghabiskan&#39;
+ &#39;menikmati&#39; &#39;menyebar&#39; &#39;merasa&#39; &#39;merasakan&#39; &#39;mulai&#39; &#39;muncul&#39; &#39;oleh&#39;
+ &#39;pagi&#39; &#39;pemandangan&#39; &#39;pepohonan&#39; &#39;pergi&#39; &#39;pinggiran&#39; &#39;rumput&#39; &#39;saja&#39;
+ &#39;saya&#39; &#39;sebuah&#39; &#39;segar&#39; &#39;sekitar&#39; &#39;sinarnya&#39; &#39;suara&#39; &#39;suasana&#39; &#39;subur&#39;
+ &#39;taman&#39; &#39;tenang&#39; &#39;tengah&#39; &#39;terletak&#39; &#39;tiba&#39; &#39;udara&#39; &#39;untuk&#39; &#39;wajah&#39;
+ &#39;waktu&#39; &#39;yang&#39;]
+[[1 0 1 0 1 0 0 0 0 0 0 0 1 0 0 1 1 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0
+  1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 1 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 1 0 0 1 0 0 1 0 0 0 0 0 1 0 0
+  0 0 0 0 0 0 0 0 0 1 0 1 1 0 0 1 1 0 0 0 0 1 0 1 1 0 1 0 0 0 0 0 3]
+ [0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 1 1 2 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0
+  0 0 1 0 0 1 1 0 0 0 0 0 0 0 1 1 0 0 1 1 0 0 0 2 0 0 0 1 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 1 0 0 0 2 0 1 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0
+  0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 2 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 2]
+ [0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0
+  0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 2 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0]
+ [0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 1 1 0 1 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0
+  0 1 0 0 0 0 0 1 0 1 1 0 0 0 0 1 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 1]
+ [0 1 0 0 0 0 0 1 0 0 1 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1
+  0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 1]]
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -703,11 +735,105 @@ Successfully installed docx2txt-0.8
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.27455638 0.         0.27455638 0.         0.27455638 0.
+  0.         0.         0.         0.         0.         0.
+  0.27455638 0.         0.         0.11505554 0.22790537 0.13041906
+  0.         0.         0.         0.         0.27455638 0.
+  0.         0.         0.         0.         0.27455638 0.
+  0.         0.         0.         0.         0.27455638 0.
+  0.27455638 0.         0.         0.         0.         0.
+  0.         0.         0.27455638 0.         0.         0.
+  0.         0.         0.         0.11505554 0.         0.
+  0.         0.         0.         0.         0.         0.
+  0.         0.27455638 0.         0.         0.         0.27455638
+  0.         0.27455638 0.        ]
+ [0.         0.         0.         0.         0.         0.
+  0.         0.         0.         0.         0.         0.
+  0.         0.         0.         0.10754085 0.         0.12190093
+  0.         0.         0.         0.25662413 0.         0.
+  0.25662413 0.         0.         0.25662413 0.         0.
+  0.         0.         0.         0.25662413 0.         0.
+  0.         0.         0.         0.         0.         0.
+  0.         0.         0.         0.21302007 0.         0.25662413
+  0.25662413 0.         0.         0.10754085 0.25662413 0.
+  0.         0.         0.         0.25662413 0.         0.18208249
+  0.25662413 0.         0.25662413 0.         0.         0.
+  0.         0.         0.47425633]
+ [0.         0.         0.         0.25432868 0.         0.25432868
+  0.         0.         0.         0.         0.         0.
+  0.         0.         0.         0.10657892 0.21111464 0.24162111
+  0.         0.25432868 0.         0.         0.         0.
+  0.         0.         0.25432868 0.         0.         0.
+  0.25432868 0.         0.         0.         0.         0.
+  0.         0.         0.25432868 0.         0.         0.25432868
+  0.25432868 0.         0.         0.         0.         0.
+  0.         0.         0.25432868 0.10657892 0.         0.
+  0.1804538  0.25432868 0.         0.         0.         0.3609076
+  0.         0.         0.         0.25432868 0.         0.
+  0.         0.         0.        ]
+ [0.         0.         0.         0.         0.         0.
+  0.         0.         0.         0.29093758 0.         0.
+  0.         0.58187517 0.         0.12192024 0.         0.13820042
+  0.         0.         0.24150318 0.         0.         0.
+  0.         0.         0.         0.         0.         0.
+  0.         0.29093758 0.         0.         0.         0.
+  0.         0.         0.         0.         0.         0.
+  0.         0.         0.         0.         0.         0.
+  0.         0.29093758 0.         0.24384048 0.         0.
+  0.20642891 0.         0.         0.         0.29093758 0.
+  0.         0.         0.         0.         0.         0.
+  0.         0.         0.35844639]
+ [0.         0.         0.         0.         0.         0.
+  0.31817369 0.         0.         0.         0.         0.31817369
+  0.         0.         0.         0.2666676  0.         0.
+  0.         0.         0.         0.         0.         0.
+  0.         0.         0.         0.         0.         0.
+  0.         0.         0.31817369 0.         0.         0.
+  0.         0.         0.         0.31817369 0.         0.
+  0.         0.         0.         0.         0.         0.
+  0.         0.         0.         0.1333338  0.         0.63634739
+  0.         0.         0.         0.         0.         0.
+  0.         0.         0.         0.         0.31817369 0.
+  0.         0.         0.        ]
+ [0.         0.         0.         0.         0.         0.
+  0.         0.         0.31096575 0.         0.         0.
+  0.         0.         0.         0.13031324 0.         0.14771415
+  0.31096575 0.         0.25812828 0.         0.         0.31096575
+  0.         0.31096575 0.         0.         0.         0.
+  0.         0.         0.         0.         0.         0.
+  0.         0.31096575 0.         0.         0.         0.
+  0.         0.31096575 0.         0.25812828 0.31096575 0.
+  0.         0.         0.         0.13031324 0.         0.
+  0.22063949 0.         0.         0.         0.         0.22063949
+  0.         0.         0.         0.         0.         0.
+  0.         0.         0.19156093]
+ [0.         0.30885422 0.         0.         0.         0.
+  0.         0.30885422 0.         0.         0.30885422 0.
+  0.         0.         0.30885422 0.12942838 0.         0.14671114
+  0.         0.         0.         0.         0.         0.
+  0.         0.         0.         0.         0.         0.30885422
+  0.         0.         0.         0.         0.         0.30885422
+  0.         0.         0.         0.         0.30885422 0.
+  0.         0.         0.         0.         0.         0.
+  0.         0.         0.         0.25885677 0.         0.
+  0.         0.         0.30885422 0.         0.         0.
+  0.         0.         0.         0.         0.         0.
+  0.30885422 0.         0.19026019]]
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">normal_matrix</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">toarray</span><span class="p">)</span>
 <span class="n">res_graph</span> <span class="o">=</span> <span class="n">normal_matrix</span> <span class="o">*</span> <span class="n">normal_matrix</span><span class="o">.</span><span class="n">T</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;bound method _cs_matrix.toarray of &lt;69x7 sparse matrix of type &#39;&lt;class &#39;numpy.float64&#39;&gt;&#39;
+	with 96 stored elements in Compressed Sparse Column format&gt;&gt;
 </pre></div>
 </div>
 </div>
@@ -723,7 +849,20 @@ Successfully installed docx2txt-0.8
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of edges 28
+Number of vertices 7
+</pre></div>
 </div>
+<img alt="_images/ba6530df6d77749fa43ae74e8ecc58559cb19b2a84bc6347c56a1e14d29853e1.png" src="_images/ba6530df6d77749fa43ae74e8ecc58559cb19b2a84bc6347c56a1e14d29853e1.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The memory used by the graph in Bytes is: 48
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="menentukan-rank-untuk-setiap-kaliman-menggunakan-textrank">
+<h2>Menentukan Rank untuk setiap kaliman Menggunakan textrank<a class="headerlink" href="#menentukan-rank-untuk-setiap-kaliman-menggunakan-textrank" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ranks is a dictionary with key=node(sentences) and value=textrank (the rank of each of the sentences)</span>
@@ -739,7 +878,23 @@ Successfully installed docx2txt-0.8
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;dict&#39;&gt;
+The size used by the dictionary in Bytes is: 360
+0 0.12781190210576654
+1 0.15145422980093037
+2 0.14158926079625825
+3 0.1561341060242873
+4 0.12582255178159504
+5 0.15564948517543448
+6 0.141538464315728
+</pre></div>
 </div>
+</div>
+</div>
+</div>
+<div class="section" id="menemukan-kalimat-penting-fan-menentukan-kesimpulan">
+<h2>Menemukan kalimat penting fan menentukan kesimpulan<a class="headerlink" href="#menemukan-kalimat-penting-fan-menentukan-kesimpulan" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># enumerate method: returns an enumerate object</span>
@@ -773,6 +928,12 @@ Successfully installed docx2txt-0.8
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.1561341060242873
+0.12582255178159504
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -797,6 +958,11 @@ Successfully installed docx2txt-0.8
         <span class="n">temp_array</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="nb">float</span><span class="p">(</span><span class="n">sentence_array</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="o">-</span> <span class="n">rank_min</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">rank_max</span> <span class="o">-</span> <span class="n">rank_min</span><span class="p">))</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">temp_array</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
 </pre></div>
 </div>
 </div>
@@ -832,6 +998,9 @@ Successfully installed docx2txt-0.8
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="menjadikan-kesimpulan-ke-dal">
+<h2>Menjadikan Kesimpulan ke dal<a class="headerlink" href="#menjadikan-kesimpulan-ke-dal" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># print(sentence_list)</span>
@@ -846,11 +1015,26 @@ Successfully installed docx2txt-0.8
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Saya melihat rumput hijau yang subur dan bunga-bunga yang bermekaran di sekitar saya. Saya berjalan-jalan di sekitar taman dan menikmati keindahan pemandangan yang dikelilingi oleh pepohonan hijau. Saya pergi ke sebuah taman yang terletak di pinggiran kota, yang memiliki pemandangan indah dan suasana yang tenang.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;function TextIOWrapper.close()&gt;
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">lines</span> <span class="ow">in</span> <span class="n">sentence_list</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Saya melihat rumput hijau yang subur dan bunga-bunga yang bermekaran di sekitar saya.
+Saya berjalan-jalan di sekitar taman dan menikmati keindahan pemandangan yang dikelilingi oleh pepohonan hijau.
+Saya pergi ke sebuah taman yang terletak di pinggiran kota, yang memiliki pemandangan indah dan suasana yang tenang.
 </pre></div>
 </div>
 </div>
@@ -920,6 +1104,14 @@ Successfully installed docx2txt-0.8
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-manual-pagerank">Perhitungan manual pagerank</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pagerank-menggunakan-networkx">Pagerank menggunakan networkx</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasiikan-ulang">2. Implementasiikan ulang</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fungsi-membaca-dokumen">Fungsi membaca dokumen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fungsi-melakukan-tokenisasi-pada-dokumen">Fungsi melakukan tokenisasi pada dokumen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#membaca-dokumen">Membaca dokumen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#print-elemen-dalam-list">Print elemen dalam list</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-term-document-matrix">Generate term-document matrix</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menentukan-rank-untuk-setiap-kaliman-menggunakan-textrank">Menentukan Rank untuk setiap kaliman Menggunakan textrank</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menemukan-kalimat-penting-fan-menentukan-kesimpulan">Menemukan kalimat penting fan menentukan kesimpulan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menjadikan-kesimpulan-ke-dal">Menjadikan Kesimpulan ke dal</a></li>
 </ul>
   </nav></div>
 
