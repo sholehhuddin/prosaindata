@@ -63,6 +63,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = '20_120 Tugas Pagerank';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Tugas (LSA Topic Modelling)" href="Tugas%20LSA%20%28Topic%20Modelling%29.html" />
     <link rel="prev" title="UTS PROSAINDATA" href="20-20_UTS_PSD.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -159,6 +160,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Tugas2DataIris.html"><strong>GET DATA IRIS</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="20-20_UTS_PSD.html"><strong>UTS PROSAINDATA</strong></a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>TUGAS PAGERANK</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tugas%20LSA%20%28Topic%20Modelling%29.html"><strong>Tugas (LSA Topic Modelling)</strong></a></li>
 </ul>
 
     </div>
@@ -362,8 +364,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#print-elemen-dalam-list">Print elemen dalam list</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-term-document-matrix">Generate term-document matrix</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menentukan-rank-untuk-setiap-kaliman-menggunakan-textrank">Menentukan Rank untuk setiap kaliman Menggunakan textrank</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menemukan-kalimat-penting-fan-menentukan-kesimpulan">Menemukan kalimat penting fan menentukan kesimpulan</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menjadikan-kesimpulan-ke-dal">Menjadikan Kesimpulan ke dal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menemukan-kalimat-penting-dan-menentukan-kesimpulan">Menemukan kalimat penting dan menentukan kesimpulan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menjadikan-kesimpulan-ke-dalam-file-baru">Menjadikan Kesimpulan ke dalam file baru</a></li>
 </ul>
             </nav>
         </div>
@@ -430,7 +432,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/861cdd3ae4b114ac57a453a1ee52842c239c0b343552dfdf2f4246190fdc8fb1.png" src="_images/861cdd3ae4b114ac57a453a1ee52842c239c0b343552dfdf2f4246190fdc8fb1.png" />
+<img alt="_images/0a649b40af089f3b20fb63c08cc689e95fe519876a450e050af6cc61a8a40cda.png" src="_images/0a649b40af089f3b20fb63c08cc689e95fe519876a450e050af6cc61a8a40cda.png" />
 </div>
 </div>
 </div>
@@ -489,8 +491,17 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
-Requirement already satisfied: PyPDF2 in /usr/local/lib/python3.9/dist-packages (3.0.1)
-Requirement already satisfied: typing_extensions&gt;=3.10.0.0 in /usr/local/lib/python3.9/dist-packages (from PyPDF2) (4.5.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting PyPDF2
+  Downloading pypdf2-3.0.1-py3-none-any.whl (232 kB)
+?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/232.6 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">232.6/232.6 kB</span> <span class=" -Color -Color-Red">16.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25h
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: PyPDF2
+Successfully installed PyPDF2-3.0.1
 </pre></div>
 </div>
 </div>
@@ -503,7 +514,22 @@ Requirement already satisfied: typing_extensions&gt;=3.10.0.0 in /usr/local/lib/
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
-Requirement already satisfied: docx2txt in /usr/local/lib/python3.9/dist-packages (0.8)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting docx2txt
+  Downloading docx2txt-0.8.tar.gz (2.8 kB)
+  Preparing metadata (setup.py) ... ?25l?25hdone
+Building wheels for collected packages: docx2txt
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Building wheel for docx2txt (setup.py) ... ?25l?25hdone
+  Created wheel for docx2txt: filename=docx2txt-0.8-py3-none-any.whl size=3957 sha256=6cc2060dedd6c1e72d62470300af28dfa9183fd274f69287aaecd03a8ee9090d
+  Stored in directory: /root/.cache/pip/wheels/22/58/cf/093d0a6c3ecfdfc5f6ddd5524043b88e59a9a199cb02352966
+Successfully built docx2txt
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: docx2txt
+Successfully installed docx2txt-0.8
 </pre></div>
 </div>
 </div>
@@ -623,7 +649,7 @@ Requirement already satisfied: docx2txt in /usr/local/lib/python3.9/dist-package
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The size of the list in Bytes is: 112
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The size of the list in Bytes is: 120
 The size of the item 0 in Bytes is: 151
 </pre></div>
 </div>
@@ -893,8 +919,8 @@ The size used by the dictionary in Bytes is: 360
 </div>
 </div>
 </div>
-<div class="section" id="menemukan-kalimat-penting-fan-menentukan-kesimpulan">
-<h2>Menemukan kalimat penting fan menentukan kesimpulan<a class="headerlink" href="#menemukan-kalimat-penting-fan-menentukan-kesimpulan" title="Permalink to this heading">#</a></h2>
+<div class="section" id="menemukan-kalimat-penting-dan-menentukan-kesimpulan">
+<h2>Menemukan kalimat penting dan menentukan kesimpulan<a class="headerlink" href="#menemukan-kalimat-penting-dan-menentukan-kesimpulan" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># enumerate method: returns an enumerate object</span>
@@ -999,8 +1025,8 @@ The size used by the dictionary in Bytes is: 360
 </div>
 </div>
 </div>
-<div class="section" id="menjadikan-kesimpulan-ke-dal">
-<h2>Menjadikan Kesimpulan ke dal<a class="headerlink" href="#menjadikan-kesimpulan-ke-dal" title="Permalink to this heading">#</a></h2>
+<div class="section" id="menjadikan-kesimpulan-ke-dalam-file-baru">
+<h2>Menjadikan Kesimpulan ke dalam file baru<a class="headerlink" href="#menjadikan-kesimpulan-ke-dalam-file-baru" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># print(sentence_list)</span>
@@ -1082,6 +1108,15 @@ Saya pergi ke sebuah taman yang terletak di pinggiran kota, yang memiliki pemand
         <p class="prev-next-title"><strong>UTS PROSAINDATA</strong></p>
       </div>
     </a>
+    <a class="right-next"
+       href="Tugas%20LSA%20%28Topic%20Modelling%29.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><strong>Tugas (LSA Topic Modelling)</strong></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -1110,8 +1145,8 @@ Saya pergi ke sebuah taman yang terletak di pinggiran kota, yang memiliki pemand
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#print-elemen-dalam-list">Print elemen dalam list</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-term-document-matrix">Generate term-document matrix</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menentukan-rank-untuk-setiap-kaliman-menggunakan-textrank">Menentukan Rank untuk setiap kaliman Menggunakan textrank</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menemukan-kalimat-penting-fan-menentukan-kesimpulan">Menemukan kalimat penting fan menentukan kesimpulan</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menjadikan-kesimpulan-ke-dal">Menjadikan Kesimpulan ke dal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menemukan-kalimat-penting-dan-menentukan-kesimpulan">Menemukan kalimat penting dan menentukan kesimpulan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menjadikan-kesimpulan-ke-dalam-file-baru">Menjadikan Kesimpulan ke dalam file baru</a></li>
 </ul>
   </nav></div>
 
