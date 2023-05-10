@@ -63,7 +63,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Tugas LSA (Topic Modelling)';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="TUGAS PAGERANK" href="20_120%20Tugas%20Pagerank.html" />
+    <link rel="prev" title="Scrapping Data Coment Youtube" href="scrapping_comment_youtube.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -159,6 +159,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Tugas2DataIris.html"><strong>GET DATA IRIS</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="20-20_UTS_PSD.html"><strong>UTS PROSAINDATA</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="20_120%20Tugas%20Pagerank.html"><strong>TUGAS PAGERANK</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="scrapping_comment_youtube.html"><strong>Scrapping Data Coment Youtube</strong></a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Tugas (LSA Topic Modelling)</strong></a></li>
 </ul>
 
@@ -370,50 +371,6 @@ document.write(`
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="tugas-lsa-topic-modelling">
 <h1><strong>Tugas (LSA Topic Modelling)</strong><a class="headerlink" href="#tugas-lsa-topic-modelling" title="Permalink to this heading">#</a></h1>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
-<span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">KeyboardInterrupt</span>Traceback (most recent call last)
-<span class="nn">&lt;ipython-input-1-d5df0069828e&gt;</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/google/colab/drive.py</span> in <span class="ni">mount</span><span class="nt">(mountpoint, force_remount, timeout_ms, readonly)</span>
-<span class="g g-Whitespace">    </span><span class="mi">101</span> <span class="k">def</span> <span class="nf">mount</span><span class="p">(</span><span class="n">mountpoint</span><span class="p">,</span> <span class="n">force_remount</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">timeout_ms</span><span class="o">=</span><span class="mi">120000</span><span class="p">,</span> <span class="n">readonly</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">102</span><span class="w">   </span><span class="sd">&quot;&quot;&quot;Mount your Google Drive at the specified mountpoint path.&quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">103</span>   <span class="k">return</span> <span class="n">_mount</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">104</span>       <span class="n">mountpoint</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">105</span>       <span class="n">force_remount</span><span class="o">=</span><span class="n">force_remount</span><span class="p">,</span>
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/google/colab/drive.py</span> in <span class="ni">_mount</span><span class="nt">(mountpoint, force_remount, timeout_ms, ephemeral, readonly)</span>
-<span class="g g-Whitespace">    </span><span class="mi">130</span>   <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">131</span>   <span class="k">if</span> <span class="n">ephemeral</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">132</span>     <span class="n">_message</span><span class="o">.</span><span class="n">blocking_request</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">133</span>         <span class="s1">&#39;request_auth&#39;</span><span class="p">,</span> <span class="n">request</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;authType&#39;</span><span class="p">:</span> <span class="s1">&#39;dfs_ephemeral&#39;</span><span class="p">},</span> <span class="n">timeout_sec</span><span class="o">=</span><span class="kc">None</span>
-<span class="g g-Whitespace">    </span><span class="mi">134</span>     <span class="p">)</span>
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/google/colab/_message.py</span> in <span class="ni">blocking_request</span><span class="nt">(request_type, request, timeout_sec, parent)</span>
-<span class="g g-Whitespace">    </span><span class="mi">174</span>       <span class="n">request_type</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="n">parent</span><span class="p">,</span> <span class="n">expect_reply</span><span class="o">=</span><span class="kc">True</span>
-<span class="g g-Whitespace">    </span><span class="mi">175</span>   <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">176</span>   <span class="k">return</span> <span class="n">read_reply_from_input</span><span class="p">(</span><span class="n">request_id</span><span class="p">,</span> <span class="n">timeout_sec</span><span class="p">)</span>
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/google/colab/_message.py</span> in <span class="ni">read_reply_from_input</span><span class="nt">(message_id, timeout_sec)</span>
-<span class="g g-Whitespace">     </span><span class="mi">94</span>     <span class="n">reply</span> <span class="o">=</span> <span class="n">_read_next_input_message</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">95</span>     <span class="k">if</span> <span class="n">reply</span> <span class="o">==</span> <span class="n">_NOT_READY</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">reply</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
-<span class="ne">---&gt; </span><span class="mi">96</span>       <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.025</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">97</span>       <span class="k">continue</span>
-<span class="g g-Whitespace">     </span><span class="mi">98</span>     <span class="k">if</span> <span class="p">(</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
-</pre></div>
-</div>
-</div>
-</div>
 <div class="section" id="read-data">
 <h2>Read Data<a class="headerlink" href="#read-data" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
@@ -429,14 +386,14 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/sholehhuddin/data-csv/main/datacomment_cnn_fix.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/sholehhuddin/psd/main/datacomment_cnn_fix.csv&#39;</span><span class="p">)</span>
 <span class="n">df</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-a6eabf62-4ad6-453e-9f8d-9241e66e3922">
+  <div id="df-84543038-08c9-4cc9-a1ff-cbf812654d3a">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -463,28 +420,28 @@ document.write(`
   <tbody>
     <tr>
       <th>0</th>
-      <td>ID\nSkip navigation\nSign in\nKoalisi Pendukun...</td>
-      <td>id skip navigation sign ini koalisi pendukung ...</td>
+      <td>ID\nSkip navigation\nSign in\nPengamat: Suara ...</td>
+      <td>id skip navigation sign ini pengamat suara pdi...</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>Nasib Partai Nasdem di koalisi pemerintahan Jo...</td>
-      <td>nasib partai nasdem di koalisi pemerintahan jo...</td>
+      <td>Saya yakin pemilih Djawa Timur adalah pemilih ...</td>
+      <td>saya yakin pemilih djawa timur adalah pemilih ...</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>Politik itu pilihan dan kepentingan dari parta...</td>
-      <td>politik itu pilihan dan kepentingan dari parta...</td>
+      <td>Indonesia butuh pemimpin cerdas berwawasan, pe...</td>
+      <td>indonesia butuh pemimpin cerdas berwawasan pem...</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>Kalaupun benar retak tentunya wajar. Ada orang...</td>
-      <td>kalaupun benar retak tentunya wajar ada orang ...</td>
+      <td>semoga santiasa dalam lindungan allah SWT pak ...</td>
+      <td>semoga santiasa dalam lindungan allah swt pak ...</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>negara sdh amburadul kok msh mau d atur dgn ca...</td>
-      <td>negara sudah amburadul kok masih mau di atur d...</td>
+      <td>Ganjar Pranowo  presiden 2024  sy non politik 🇮🇩</td>
+      <td>ganjar pranowo presiden saya non politik bende...</td>
     </tr>
     <tr>
       <th>...</th>
@@ -492,35 +449,35 @@ document.write(`
       <td>...</td>
     </tr>
     <tr>
-      <th>196</th>
-      <td>Karena pak jokowi selalu di celah anis basweda...</td>
-      <td>karena pak jokowi selalu di celah anis basweda...</td>
+      <th>173</th>
+      <td>sebagian besar masyarakat sdh cerdas mana pemi...</td>
+      <td>sebagian besar masyarakat sudah cerdas mana pe...</td>
     </tr>
     <tr>
-      <th>197</th>
-      <td>Kasian nasdrun .kurang peka pada sinyal \n</td>
-      <td>kasihan nasdrun kurang peka pada sinyal</td>
+      <th>174</th>
+      <td>Merahkan Indonesia Ganjar Pranowo jadi preside...</td>
+      <td>merahkan indonesia ganjar pranowo jadi preside...</td>
     </tr>
     <tr>
-      <th>198</th>
-      <td>Koalisi Pendukung Jokowi Mulai Retak?\nCNN Ind...</td>
-      <td>koalisi pendukung jokowi mulai retak cn indone...</td>
+      <th>175</th>
+      <td>SayA jawa timur siap untuk pak Ganjar....!!!</td>
+      <td>saya jawa timur siap untuk pak ganjar</td>
     </tr>
     <tr>
-      <th>199</th>
-      <td>Nasib Partai Nasdem di koalisi pemerintahan Jo...</td>
-      <td>nasib partai nasdem di koalisi pemerintahan jo...</td>
+      <th>176</th>
+      <td>Intinya itu harus jujur harus adil adu gagasan...</td>
+      <td>intinya itu harus jujur harus adil adu gagasan...</td>
     </tr>
     <tr>
-      <th>200</th>
-      <td>You're signed out of YouTube\nSign in to like ...</td>
-      <td>you re signed out of youtube sign ini tapi lik...</td>
+      <th>177</th>
+      <td>Ganjar - puan mantap</td>
+      <td>ganjar puan mantap</td>
     </tr>
   </tbody>
 </table>
-<p>201 rows × 2 columns</p>
+<p>178 rows × 2 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-a6eabf62-4ad6-453e-9f8d-9241e66e3922')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-84543038-08c9-4cc9-a1ff-cbf812654d3a')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -571,12 +528,12 @@ document.write(`
 
       <script>
         const buttonEl =
-          document.querySelector('#df-a6eabf62-4ad6-453e-9f8d-9241e66e3922 button.colab-df-convert');
+          document.querySelector('#df-84543038-08c9-4cc9-a1ff-cbf812654d3a button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-a6eabf62-4ad6-453e-9f8d-9241e66e3922');
+          const element = document.querySelector('#df-84543038-08c9-4cc9-a1ff-cbf812654d3a');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -653,10 +610,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Topic 0:  [(&#39;nasdem&#39;, 0.6246143745275621), (&#39;jokowi&#39;, 0.32096023486217523)]
-Topic 1:  [(&#39;rakyat&#39;, 0.5383726378908907), (&#39;partai&#39;, 0.36061188484724443)]
-Topic 2:  [(&#39;koalisi&#39;, 0.33101933164612135), (&#39;presiden&#39;, 0.3208960926993904)]
-Topic 3:  [(&#39;surya&#39;, 0.4683933502261465), (&#39;paloh&#39;, 0.40094591971751325)]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Topic 0:  [(&#39;ganjar&#39;, 0.8523062942442721), (&#39;pranowo&#39;, 0.23849804176358258)]
+Topic 1:  [(&#39;jawa&#39;, 0.6627473334970462), (&#39;timur&#39;, 0.5118151348069739)]
+Topic 2:  [(&#39;indonesia&#39;, 0.5439351942540612), (&#39;bendera&#39;, 0.5299181376901594)]
+Topic 3:  [(&#39;jatim&#39;, 0.42359435358284186), (&#39;cerdas&#39;, 0.3892034620708598)]
 </pre></div>
 </div>
 </div>
@@ -677,7 +634,7 @@ Topic 3:  [(&#39;surya&#39;, 0.4683933502261465), (&#39;paloh&#39;, 0.4009459197
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-61443c84-55f1-4fc5-ab39-e61ef8ea6b20">
+  <div id="df-ff2fa798-f0fe-4692-9ea0-994465b69b0f">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -708,47 +665,47 @@ Topic 3:  [(&#39;surya&#39;, 0.4683933502261465), (&#39;paloh&#39;, 0.4009459197
   <tbody>
     <tr>
       <th>0</th>
-      <td>id skip navigation sign ini koalisi pendukung ...</td>
-      <td>0.302104</td>
-      <td>0.063721</td>
-      <td>0.040003</td>
-      <td>0.013245</td>
+      <td>id skip navigation sign ini pengamat suara pdi...</td>
+      <td>0.196854</td>
+      <td>0.067840</td>
+      <td>0.100107</td>
+      <td>0.051328</td>
       <td>0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>nasib partai nasdem di koalisi pemerintahan jo...</td>
-      <td>0.429585</td>
-      <td>0.011216</td>
-      <td>0.591743</td>
-      <td>-0.356091</td>
-      <td>2</td>
+      <td>saya yakin pemilih djawa timur adalah pemilih ...</td>
+      <td>0.080004</td>
+      <td>0.276878</td>
+      <td>0.058952</td>
+      <td>0.281794</td>
+      <td>3</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>politik itu pilihan dan kepentingan dari parta...</td>
-      <td>0.276378</td>
-      <td>-0.061394</td>
-      <td>-0.153368</td>
-      <td>-0.089743</td>
-      <td>0</td>
+      <td>indonesia butuh pemimpin cerdas berwawasan pem...</td>
+      <td>0.070547</td>
+      <td>0.136517</td>
+      <td>0.203236</td>
+      <td>0.213109</td>
+      <td>3</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>kalaupun benar retak tentunya wajar ada orang ...</td>
-      <td>0.160557</td>
-      <td>0.061311</td>
-      <td>0.073362</td>
-      <td>0.126429</td>
+      <td>semoga santiasa dalam lindungan allah swt pak ...</td>
+      <td>0.129089</td>
+      <td>-0.025643</td>
+      <td>0.037124</td>
+      <td>0.039019</td>
       <td>0</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>negara sudah amburadul kok masih mau di atur d...</td>
-      <td>0.021363</td>
-      <td>0.019103</td>
-      <td>0.047198</td>
-      <td>0.021212</td>
+      <td>ganjar pranowo presiden saya non politik bende...</td>
+      <td>0.308476</td>
+      <td>-0.078213</td>
+      <td>0.525779</td>
+      <td>-0.141256</td>
       <td>2</td>
     </tr>
     <tr>
@@ -761,55 +718,55 @@ Topic 3:  [(&#39;surya&#39;, 0.4683933502261465), (&#39;paloh&#39;, 0.4009459197
       <td>...</td>
     </tr>
     <tr>
-      <th>196</th>
-      <td>karena pak jokowi selalu di celah anis basweda...</td>
-      <td>0.131440</td>
-      <td>0.026169</td>
-      <td>0.077868</td>
-      <td>0.107238</td>
-      <td>0</td>
+      <th>173</th>
+      <td>sebagian besar masyarakat sudah cerdas mana pe...</td>
+      <td>0.040758</td>
+      <td>0.119084</td>
+      <td>0.091378</td>
+      <td>0.217719</td>
+      <td>3</td>
     </tr>
     <tr>
-      <th>197</th>
-      <td>kasihan nasdrun kurang peka pada sinyal</td>
-      <td>0.013509</td>
-      <td>-0.004676</td>
-      <td>-0.008389</td>
-      <td>-0.021149</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>198</th>
-      <td>koalisi pendukung jokowi mulai retak cn indone...</td>
-      <td>0.444314</td>
-      <td>0.013124</td>
-      <td>0.606413</td>
-      <td>-0.339728</td>
+      <th>174</th>
+      <td>merahkan indonesia ganjar pranowo jadi preside...</td>
+      <td>0.354292</td>
+      <td>-0.089954</td>
+      <td>0.377444</td>
+      <td>-0.025503</td>
       <td>2</td>
     </tr>
     <tr>
-      <th>199</th>
-      <td>nasib partai nasdem di koalisi pemerintahan jo...</td>
-      <td>0.429585</td>
-      <td>0.011216</td>
-      <td>0.591743</td>
-      <td>-0.356091</td>
+      <th>175</th>
+      <td>saya jawa timur siap untuk pak ganjar</td>
+      <td>0.479167</td>
+      <td>0.696830</td>
+      <td>-0.192593</td>
+      <td>-0.289814</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>176</th>
+      <td>intinya itu harus jujur harus adil adu gagasan...</td>
+      <td>0.002086</td>
+      <td>0.000735</td>
+      <td>0.005270</td>
+      <td>0.002015</td>
       <td>2</td>
     </tr>
     <tr>
-      <th>200</th>
-      <td>you re signed out of youtube sign ini tapi lik...</td>
-      <td>0.005272</td>
-      <td>-0.006131</td>
-      <td>-0.005448</td>
-      <td>-0.000714</td>
+      <th>177</th>
+      <td>ganjar puan mantap</td>
+      <td>0.230767</td>
+      <td>0.011189</td>
+      <td>-0.065166</td>
+      <td>-0.116389</td>
       <td>0</td>
     </tr>
   </tbody>
 </table>
-<p>201 rows × 6 columns</p>
+<p>178 rows × 6 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-61443c84-55f1-4fc5-ab39-e61ef8ea6b20')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-ff2fa798-f0fe-4692-9ea0-994465b69b0f')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -860,12 +817,12 @@ Topic 3:  [(&#39;surya&#39;, 0.4683933502261465), (&#39;paloh&#39;, 0.4009459197
 
       <script>
         const buttonEl =
-          document.querySelector('#df-61443c84-55f1-4fc5-ab39-e61ef8ea6b20 button.colab-df-convert');
+          document.querySelector('#df-ff2fa798-f0fe-4692-9ea0-994465b69b0f button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-61443c84-55f1-4fc5-ab39-e61ef8ea6b20');
+          const element = document.querySelector('#df-ff2fa798-f0fe-4692-9ea0-994465b69b0f');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -893,10 +850,10 @@ Topic 3:  [(&#39;surya&#39;, 0.4683933502261465), (&#39;paloh&#39;, 0.4009459197
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    119
-1     42
-2     20
-3     20
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    93
+3    34
+2    29
+1    22
 Name: Topik, dtype: int64
 </pre></div>
 </div>
@@ -937,12 +894,12 @@ Name: Topik, dtype: int64
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="20_120%20Tugas%20Pagerank.html"
+       href="scrapping_comment_youtube.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><strong>TUGAS PAGERANK</strong></p>
+        <p class="prev-next-title"><strong>Scrapping Data Coment Youtube</strong></p>
       </div>
     </a>
 </div></div>
