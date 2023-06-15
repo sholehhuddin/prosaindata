@@ -390,6 +390,9 @@ document.write(`
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="uas-psd">
 <h1><strong>UAS PSD</strong><a class="headerlink" href="#uas-psd" title="Permalink to this heading">#</a></h1>
+<p>Pekerjaan dari :</p>
+<p>200411100124 Tegar Fakhruddin (Ketua)</p>
+<p>200411100120 Moh. Sholeh Huddin (Anggota)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">yfinance</span> <span class="k">as</span> <span class="nn">yf</span>
@@ -526,7 +529,7 @@ Date
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-66f19cb4-9269-4517-a546-0da06482cc11">
+  <div id="df-b9622664-c8f8-4cb7-81f8-6a402f5f576e">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -617,7 +620,7 @@ Date
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-66f19cb4-9269-4517-a546-0da06482cc11')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-b9622664-c8f8-4cb7-81f8-6a402f5f576e')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -668,12 +671,12 @@ Date
 
       <script>
         const buttonEl =
-          document.querySelector('#df-66f19cb4-9269-4517-a546-0da06482cc11 button.colab-df-convert');
+          document.querySelector('#df-b9622664-c8f8-4cb7-81f8-6a402f5f576e button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-66f19cb4-9269-4517-a546-0da06482cc11');
+          const element = document.querySelector('#df-b9622664-c8f8-4cb7-81f8-6a402f5f576e');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -839,7 +842,7 @@ Date
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MAPE: 0.03878965743359157
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MAPE: 0.04354271212868504
 </pre></div>
 </div>
 </div>
@@ -858,53 +861,7 @@ Date
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/8a07d006d9911c2e6712808737bb58b264fb6d92b3c06bb0e65efbc71d802721.png" src="_images/8a07d006d9911c2e6712808737bb58b264fb6d92b3c06bb0e65efbc71d802721.png" />
-</div>
-</div>
-<p>#Multilayer Percptron (MLP)</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.neural_network</span> <span class="kn">import</span> <span class="n">MLPRegressor</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_absolute_percentage_error</span>
-
-<span class="c1"># Inisialisasi dan latih model MLP</span>
-<span class="n">model_mlp</span> <span class="o">=</span> <span class="n">MLPRegressor</span><span class="p">()</span>
-<span class="n">model_mlp</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-
-<span class="c1"># Prediksi pada data test</span>
-<span class="n">y_pred</span> <span class="o">=</span> <span class="n">model_mlp</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-
-<span class="c1"># Menghitung MAPE</span>
-<span class="n">mape</span> <span class="o">=</span> <span class="n">mean_absolute_percentage_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MAPE:&#39;</span><span class="p">,</span> <span class="n">mape</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MAPE: 0.7443542613259527
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.10/dist-packages/sklearn/neural_network/_multilayer_perceptron.py:686: ConvergenceWarning: Stochastic Optimizer: Maximum iterations (200) reached and the optimization hasn&#39;t converged yet.
-  warnings.warn(
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Membuat grafik MAPE</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Actual&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Predicted&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Volume&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Actual vs Predicted&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/73fe1194cf0e59b77c855f54040ae6870be01dca6546db303962ae64d8fc4b06.png" src="_images/73fe1194cf0e59b77c855f54040ae6870be01dca6546db303962ae64d8fc4b06.png" />
+<img alt="_images/5ffce609e50e9c0fa87e810f211733b00cce7fac7c9ca27ce29ce6cc41a552ba.png" src="_images/5ffce609e50e9c0fa87e810f211733b00cce7fac7c9ca27ce29ce6cc41a552ba.png" />
 </div>
 </div>
 </div>
