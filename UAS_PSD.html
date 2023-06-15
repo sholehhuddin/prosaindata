@@ -397,7 +397,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <p>##UAS PSD</p>
+  <p>#UAS PSD</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">yfinance</span> <span class="k">as</span> <span class="nn">yf</span>
@@ -534,7 +534,7 @@ Date
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-09c70c6c-e38d-4f5c-bc76-79c4faa349e7">
+  <div id="df-2a947278-49ce-4a30-9c9e-5b3067685eac">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -625,7 +625,7 @@ Date
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-09c70c6c-e38d-4f5c-bc76-79c4faa349e7')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-2a947278-49ce-4a30-9c9e-5b3067685eac')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -676,12 +676,12 @@ Date
 
       <script>
         const buttonEl =
-          document.querySelector('#df-09c70c6c-e38d-4f5c-bc76-79c4faa349e7 button.colab-df-convert');
+          document.querySelector('#df-2a947278-49ce-4a30-9c9e-5b3067685eac button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-09c70c6c-e38d-4f5c-bc76-79c4faa349e7');
+          const element = document.querySelector('#df-2a947278-49ce-4a30-9c9e-5b3067685eac');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -815,6 +815,136 @@ Date
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/192910e2e69ecfce1872f7de4908245394edce06f0509df9d448bb83b21e4c5a.png" src="_images/192910e2e69ecfce1872f7de4908245394edce06f0509df9d448bb83b21e4c5a.png" />
+</div>
+</div>
+<p>#Naive Bayes</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.naive_bayes</span> <span class="kn">import</span> <span class="n">GaussianNB</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_absolute_error</span>
+
+<span class="n">model_nb</span> <span class="o">=</span> <span class="n">GaussianNB</span><span class="p">()</span>
+<span class="n">model_nb</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">y_pred_nb</span> <span class="o">=</span> <span class="n">model_nb</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="n">mae_nb</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MAE (Naive Bayes):&#39;</span><span class="p">,</span> <span class="n">mae_nb</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">ValueError</span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-17-b8a79458be54&gt;</span> in <span class="ni">&lt;cell line: 5&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> 
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">model_nb</span> <span class="o">=</span> <span class="n">GaussianNB</span><span class="p">()</span>
+<span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">model_nb</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">y_pred_nb</span> <span class="o">=</span> <span class="n">model_nb</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> 
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/sklearn/naive_bayes.py</span> in <span class="ni">fit</span><span class="nt">(self, X, y, sample_weight)</span>
+<span class="g g-Whitespace">    </span><span class="mi">265</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_validate_params</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">266</span>         <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate_data</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">267</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_partial_fit</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">268</span>             <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="n">_refit</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sample_weight</span><span class="o">=</span><span class="n">sample_weight</span>
+<span class="g g-Whitespace">    </span><span class="mi">269</span>         <span class="p">)</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/sklearn/naive_bayes.py</span> in <span class="ni">_partial_fit</span><span class="nt">(self, X, y, classes, _refit, sample_weight)</span>
+<span class="g g-Whitespace">    </span><span class="mi">425</span>             <span class="bp">self</span><span class="o">.</span><span class="n">classes_</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">426</span> 
+<span class="ne">--&gt; </span><span class="mi">427</span>         <span class="n">first_call</span> <span class="o">=</span> <span class="n">_check_partial_fit_first_call</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">classes</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">428</span>         <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate_data</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">reset</span><span class="o">=</span><span class="n">first_call</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">429</span>         <span class="k">if</span> <span class="n">sample_weight</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/sklearn/utils/multiclass.py</span> in <span class="ni">_check_partial_fit_first_call</span><span class="nt">(clf, classes)</span>
+<span class="g g-Whitespace">    </span><span class="mi">418</span>         <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">419</span>             <span class="c1"># This is the first call to partial_fit</span>
+<span class="ne">--&gt; </span><span class="mi">420</span>             <span class="n">clf</span><span class="o">.</span><span class="n">classes_</span> <span class="o">=</span> <span class="n">unique_labels</span><span class="p">(</span><span class="n">classes</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">421</span>             <span class="k">return</span> <span class="kc">True</span>
+<span class="g g-Whitespace">    </span><span class="mi">422</span> 
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/sklearn/utils/multiclass.py</span> in <span class="ni">unique_labels</span><span class="nt">(*ys)</span>
+<span class="g g-Whitespace">    </span><span class="mi">105</span>     <span class="n">_unique_labels</span> <span class="o">=</span> <span class="n">_FN_UNIQUE_LABELS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">label_type</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">106</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">_unique_labels</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">107</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Unknown label type: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="nb">repr</span><span class="p">(</span><span class="n">ys</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">108</span> 
+<span class="g g-Whitespace">    </span><span class="mi">109</span>     <span class="k">if</span> <span class="n">is_array_api</span><span class="p">:</span>
+
+<span class="ne">ValueError</span>: Unknown label type: (array([ 72.22000122,  72.26000214,  73.69999695,  73.75      ,
+<span class="g g-Whitespace">        </span><span class="mi">74</span><span class="mf">.23000336</span><span class="p">,</span>  <span class="mf">76.5</span>       <span class="p">,</span>  <span class="mf">76.93000031</span><span class="p">,</span>  <span class="mf">77.15000153</span><span class="p">,</span>
+<span class="g g-Whitespace">        </span><span class="mi">77</span><span class="mf">.56999969</span><span class="p">,</span>  <span class="mf">77.75</span>      <span class="p">,</span>  <span class="mf">77.87000275</span><span class="p">,</span>  <span class="mf">79.59999847</span><span class="p">,</span>
+<span class="g g-Whitespace">        </span><span class="mi">80</span><span class="mf">.40000153</span><span class="p">,</span>  <span class="mf">81.38999939</span><span class="p">,</span>  <span class="mf">81.56999969</span><span class="p">,</span>  <span class="mf">82.02999878</span><span class="p">,</span>
+<span class="g g-Whitespace">        </span><span class="mi">82</span><span class="mf">.29000092</span><span class="p">,</span>  <span class="mf">82.79000092</span><span class="p">,</span>  <span class="mf">82.98000336</span><span class="p">,</span>  <span class="mf">83.54000092</span><span class="p">,</span>
+<span class="g g-Whitespace">        </span><span class="mi">83</span><span class="mf">.66999817</span><span class="p">,</span>  <span class="mf">84.31999969</span><span class="p">,</span>  <span class="mf">84.62999725</span><span class="p">,</span>  <span class="mf">84.98999786</span><span class="p">,</span>
+<span class="g g-Whitespace">        </span><span class="mi">85</span><span class="mf">.09999847</span><span class="p">,</span>  <span class="mf">85.29000092</span><span class="p">,</span>  <span class="mf">85.87999725</span><span class="p">,</span>  <span class="mf">86.41000366</span><span class="p">,</span>
+<span class="g g-Whitespace">        </span><span class="mi">86</span><span class="mf">.51000214</span><span class="p">,</span>  <span class="mf">86.66000366</span><span class="p">,</span>  <span class="mf">86.76999664</span><span class="p">,</span>  <span class="mf">86.90000153</span><span class="p">,</span>
+<span class="g g-Whitespace">        </span><span class="mi">87</span><span class="mf">.01999664</span><span class="p">,</span>  <span class="mf">88.11000061</span><span class="p">,</span>  <span class="mf">88.51000214</span><span class="p">,</span>  <span class="mf">88.83000183</span><span class="p">,</span>
+<span class="g g-Whitespace">        </span><span class="mi">89</span><span class="mf">.31999969</span><span class="p">,</span>  <span class="mf">89.72000122</span><span class="p">,</span>  <span class="mf">89.80000305</span><span class="p">,</span>  <span class="mf">90.23000336</span><span class="p">,</span>
+<span class="g g-Whitespace">        </span><span class="mi">91</span><span class="mf">.02999878</span><span class="p">,</span>  <span class="mf">91.47000122</span><span class="p">,</span>  <span class="mf">91.61000061</span><span class="p">,</span>  <span class="mf">91.81999969</span><span class="p">,</span>
+<span class="g g-Whitespace">        </span><span class="mi">92</span><span class="mf">.79000092</span><span class="p">,</span>  <span class="mf">94.34999847</span><span class="p">,</span>  <span class="mf">94.88999939</span><span class="p">,</span>  <span class="mf">95.65000153</span><span class="p">,</span>
+<span class="g g-Whitespace">        </span><span class="mi">96</span><span class="mf">.06999969</span><span class="p">,</span>  <span class="mf">96.30000305</span><span class="p">,</span>  <span class="mf">96.33999634</span><span class="p">,</span>  <span class="mf">96.66000366</span><span class="p">,</span>
+<span class="g g-Whitespace">        </span><span class="mi">96</span><span class="mf">.69999695</span><span class="p">,</span>  <span class="mf">96.76999664</span><span class="p">,</span>  <span class="mf">96.83000183</span><span class="p">,</span>  <span class="mf">97.</span>        <span class="p">,</span>
+<span class="g g-Whitespace">        </span><span class="mi">97</span><span class="mf">.04000092</span><span class="p">,</span>  <span class="mf">97.38999939</span><span class="p">,</span>  <span class="mf">98.</span>        <span class="p">,</span>  <span class="mf">98.01999664</span><span class="p">,</span>
+<span class="g g-Whitespace">        </span><span class="mi">98</span><span class="mf">.16000366</span><span class="p">,</span>  <span class="mf">99.18000031</span><span class="p">,</span> <span class="mf">100.05000305</span><span class="p">,</span> <span class="mf">101.79000092</span><span class="p">,</span>
+<span class="g g-Whitespace">       </span><span class="mi">103</span><span class="mf">.98000336</span><span class="p">,</span> <span class="mf">104.68000031</span><span class="p">,</span> <span class="mf">105.98000336</span><span class="p">,</span> <span class="mf">106.36000061</span><span class="p">,</span>
+<span class="g g-Whitespace">       </span><span class="mi">107</span><span class="mf">.25</span>      <span class="p">,</span> <span class="mf">117.29000092</span><span class="p">,</span> <span class="mf">120.75</span>      <span class="p">,</span> <span class="mf">122.41999817</span><span class="p">,</span>
+<span class="g g-Whitespace">       </span><span class="mi">122</span><span class="mf">.45999908</span><span class="p">,</span> <span class="mf">123.56999969</span><span class="p">,</span> <span class="mf">124.02999878</span><span class="p">,</span> <span class="mf">126.52999878</span><span class="p">,</span>
+<span class="g g-Whitespace">       </span><span class="mi">128</span><span class="mf">.52000427</span><span class="p">,</span> <span class="mf">130.41999817</span><span class="p">,</span> <span class="mf">132.32000732</span><span class="p">]),)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>#Decision Tree (Pohon Keputusan)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeRegressor</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_absolute_percentage_error</span>
+
+<span class="c1"># Inisialisasi dan latih model Decision Tree</span>
+<span class="n">model_dt</span> <span class="o">=</span> <span class="n">DecisionTreeRegressor</span><span class="p">()</span>
+<span class="n">model_dt</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="c1"># Prediksi pada data test</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">model_dt</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="c1"># Menghitung MAPE</span>
+<span class="n">mape</span> <span class="o">=</span> <span class="n">mean_absolute_percentage_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MAPE:&#39;</span><span class="p">,</span> <span class="n">mape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MAPE: 0.046230285041665764
+</pre></div>
+</div>
+</div>
+</div>
+<p>#Multilayer Percptron (MLP)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.neural_network</span> <span class="kn">import</span> <span class="n">MLPRegressor</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_absolute_percentage_error</span>
+
+<span class="c1"># Inisialisasi dan latih model MLP</span>
+<span class="n">model_mlp</span> <span class="o">=</span> <span class="n">MLPRegressor</span><span class="p">()</span>
+<span class="n">model_mlp</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="c1"># Prediksi pada data test</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">model_mlp</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="c1"># Menghitung MAPE</span>
+<span class="n">mape</span> <span class="o">=</span> <span class="n">mean_absolute_percentage_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MAPE:&#39;</span><span class="p">,</span> <span class="n">mape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MAPE: 0.7203214205647763
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.10/dist-packages/sklearn/neural_network/_multilayer_perceptron.py:686: ConvergenceWarning: Stochastic Optimizer: Maximum iterations (200) reached and the optimization hasn&#39;t converged yet.
+  warnings.warn(
+</pre></div>
+</div>
 </div>
 </div>
 
