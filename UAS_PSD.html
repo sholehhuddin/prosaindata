@@ -498,7 +498,7 @@ Date
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_steps</span> <span class="o">=</span> <span class="mi">5</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_steps</span> <span class="o">=</span> <span class="mi">13</span>
 <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">split_sequence</span><span class="p">(</span><span class="n">data_open</span><span class="p">,</span> <span class="n">n_steps</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -526,7 +526,7 @@ Date
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-0b47fc82-b280-4ee0-b9ec-fd0a49d833d1">
+  <div id="df-66f19cb4-9269-4517-a546-0da06482cc11">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -546,6 +546,14 @@ Date
   <thead>
     <tr style="text-align: right;">
       <th></th>
+      <th>t-12</th>
+      <th>t-11</th>
+      <th>t-10</th>
+      <th>t-9</th>
+      <th>t-8</th>
+      <th>t-7</th>
+      <th>t-6</th>
+      <th>t-5</th>
       <th>t-4</th>
       <th>t-3</th>
       <th>t-2</th>
@@ -563,6 +571,14 @@ Date
       <td>63.150002</td>
       <td>66.220001</td>
       <td>66.669998</td>
+      <td>68.389999</td>
+      <td>70.070000</td>
+      <td>69.839996</td>
+      <td>70.870003</td>
+      <td>71.870003</td>
+      <td>68.970001</td>
+      <td>68.010002</td>
+      <td>72.220001</td>
     </tr>
     <tr>
       <th>1</th>
@@ -572,6 +588,14 @@ Date
       <td>66.220001</td>
       <td>66.669998</td>
       <td>68.389999</td>
+      <td>70.070000</td>
+      <td>69.839996</td>
+      <td>70.870003</td>
+      <td>71.870003</td>
+      <td>68.970001</td>
+      <td>68.010002</td>
+      <td>72.220001</td>
+      <td>73.750000</td>
     </tr>
     <tr>
       <th>2</th>
@@ -581,11 +605,19 @@ Date
       <td>66.669998</td>
       <td>68.389999</td>
       <td>70.070000</td>
+      <td>69.839996</td>
+      <td>70.870003</td>
+      <td>71.870003</td>
+      <td>68.970001</td>
+      <td>68.010002</td>
+      <td>72.220001</td>
+      <td>73.750000</td>
+      <td>72.900002</td>
     </tr>
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-0b47fc82-b280-4ee0-b9ec-fd0a49d833d1')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-66f19cb4-9269-4517-a546-0da06482cc11')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -636,12 +668,12 @@ Date
 
       <script>
         const buttonEl =
-          document.querySelector('#df-0b47fc82-b280-4ee0-b9ec-fd0a49d833d1 button.colab-df-convert');
+          document.querySelector('#df-66f19cb4-9269-4517-a546-0da06482cc11 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-0b47fc82-b280-4ee0-b9ec-fd0a49d833d1');
+          const element = document.querySelector('#df-66f19cb4-9269-4517-a546-0da06482cc11');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -679,114 +711,19 @@ Date
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.04236656, 0.02750109, 0.01486547, 0.        , 0.        ],
-       [0.02750109, 0.01486547, 0.        , 0.04563698, 0.00680782],
-       [0.01486547, 0.        , 0.04563698, 0.0523264 , 0.03282902],
-       [0.        , 0.04563698, 0.0523264 , 0.07789502, 0.05824505],
-       [0.04563698, 0.0523264 , 0.07789502, 0.10286901, 0.05476543],
-       [0.0523264 , 0.07789502, 0.10286901, 0.09944991, 0.07034797],
-       [0.07789502, 0.10286901, 0.09944991, 0.11476143, 0.08547657],
-       [0.10286901, 0.09944991, 0.11476143, 0.1296269 , 0.04160363],
-       [0.09944991, 0.11476143, 0.1296269 , 0.08651702, 0.02708019],
-       [0.11476143, 0.1296269 , 0.08651702, 0.07224618, 0.09077155],
-       [0.1296269 , 0.08651702, 0.07224618, 0.13482979, 0.11391828],
-       [0.08651702, 0.07224618, 0.13482979, 0.15757394, 0.101059  ],
-       [0.07224618, 0.13482979, 0.15757394, 0.14493832, 0.1555219 ],
-       [0.13482979, 0.15757394, 0.14493832, 0.19845398, 0.1131618 ],
-       [0.15757394, 0.14493832, 0.19845398, 0.15683062, 0.12118005],
-       [0.14493832, 0.19845398, 0.15683062, 0.16470942, 0.09137671],
-       [0.19845398, 0.15683062, 0.16470942, 0.13542442, 0.18532525],
-       [0.15683062, 0.16470942, 0.13542442, 0.22773897, 0.27337365],
-       [0.16470942, 0.13542442, 0.22773897, 0.31425599, 0.30922845],
-       [0.13542442, 0.22773897, 0.31425599, 0.34948719, 0.27851731],
-       [0.22773897, 0.31425599, 0.34948719, 0.31931019, 0.27382749],
-       [0.31425599, 0.34948719, 0.31931019, 0.31470194, 0.29742805],
-       [0.34948719, 0.31931019, 0.31470194, 0.33789203, 0.29742805],
-       [0.31931019, 0.31470194, 0.33789203, 0.33789203, 0.24311646],
-       [0.31470194, 0.33789203, 0.33789203, 0.28452505, 0.23222386],
-       [0.33789203, 0.33789203, 0.28452505, 0.2738219 , 0.24931913],
-       [0.33789203, 0.28452505, 0.2738219 , 0.29061984, 0.28562777],
-       [0.28452505, 0.2738219 , 0.29061984, 0.32629698, 0.25355523],
-       [0.2738219 , 0.29061984, 0.32629698, 0.29478226, 0.20242051],
-       [0.29061984, 0.32629698, 0.29478226, 0.24453691, 0.16535551],
-       [0.32629698, 0.29478226, 0.24453691, 0.20811656, 0.1620272 ],
-       [0.29478226, 0.24453691, 0.20811656, 0.20484613, 0.21800295],
-       [0.24453691, 0.20811656, 0.20484613, 0.25984832, 0.17443264],
-       [0.20811656, 0.20484613, 0.25984832, 0.21703581, 0.20302567],
-       [0.20484613, 0.25984832, 0.21703581, 0.24513154, 0.17624812],
-       [0.25984832, 0.21703581, 0.24513154, 0.21881971, 0.18653556],
-       [0.21703581, 0.24513154, 0.21881971, 0.22892823, 0.17170949],
-       [0.24513154, 0.21881971, 0.22892823, 0.21436003, 0.21452343],
-       [0.21881971, 0.22892823, 0.21436003, 0.25642933, 0.239183  ],
-       [0.22892823, 0.21436003, 0.25642933, 0.28066   , 0.22465956],
-       [0.21436003, 0.25642933, 0.28066   , 0.26638916, 0.25068076],
-       [0.25642933, 0.28066   , 0.26638916, 0.29195779, 0.28850224],
-       [0.28066   , 0.26638916, 0.29195779, 0.32912146, 0.2760968 ],
-       [0.26638916, 0.29195779, 0.32912146, 0.31693178, 0.22950071],
-       [0.29195779, 0.32912146, 0.31693178, 0.27114611, 0.26399388],
-       [0.32912146, 0.31693178, 0.27114611, 0.30503936, 0.31089249],
-       [0.31693178, 0.27114611, 0.30503936, 0.35112229, 0.3555219 ],
-       [0.27114611, 0.30503936, 0.35112229, 0.39497549, 0.46051437],
-       [0.30503936, 0.35112229, 0.39497549, 0.49814187, 0.45506806],
-       [0.35112229, 0.39497549, 0.49814187, 0.4927903 , 0.46565803],
-       [0.39497549, 0.49814187, 0.4927903 , 0.50319608, 0.44523446],
-       [0.49814187, 0.4927903 , 0.50319608, 0.48312772, 0.51180028],
-       [0.4927903 , 0.50319608, 0.48312772, 0.5485358 , 0.49863837],
-       [0.50319608, 0.48312772, 0.5485358 , 0.5356028 , 0.48108915],
-       [0.48312772, 0.5485358 , 0.5356028 , 0.51835881, 0.46217841],
-       [0.5485358 , 0.5356028 , 0.51835881, 0.49977697, 0.45158844],
-       [0.5356028 , 0.51835881, 0.49977697, 0.48937119, 0.48078662],
-       [0.51835881, 0.49977697, 0.48937119, 0.51806155, 0.45567311],
-       [0.49977697, 0.48937119, 0.51806155, 0.49338481, 0.46111941],
-       [0.48937119, 0.51806155, 0.49338481, 0.49873639, 0.46626319],
-       [0.51806155, 0.49338481, 0.49873639, 0.50379071, 0.42556724],
-       [0.49338481, 0.49873639, 0.50379071, 0.46380256, 0.38199694],
-       [0.49873639, 0.50379071, 0.46380256, 0.42099006, 0.37972763],
-       [0.50379071, 0.46380256, 0.42099006, 0.41876021, 0.45143712],
-       [0.46380256, 0.42099006, 0.41876021, 0.4892225 , 0.43494701],
-       [0.42099006, 0.41876021, 0.4892225 , 0.4730192 , 0.40196668],
-       [0.41876021, 0.4892225 , 0.4730192 , 0.44061247, 0.38729192],
-       [0.4892225 , 0.4730192 , 0.44061247, 0.42619295, 0.36323752],
-       [0.4730192 , 0.44061247, 0.42619295, 0.40255691, 0.38411493],
-       [0.44061247, 0.42619295, 0.40255691, 0.42307121, 0.33721632],
-       [0.42619295, 0.40255691, 0.42307121, 0.37698828, 0.34205747],
-       [0.40255691, 0.42307121, 0.37698828, 0.38174523, 0.35673222],
-       [0.42307121, 0.37698828, 0.38174523, 0.39616475, 0.33116486],
-       [0.37698828, 0.38174523, 0.39616475, 0.37104207, 0.31285928],
-       [0.38174523, 0.39616475, 0.37104207, 0.35305487, 0.30695914],
-       [0.39616475, 0.37104207, 0.35305487, 0.34725735, 0.3054463 ],
-       [0.37104207, 0.35305487, 0.34725735, 0.34577082, 0.31467464],
-       [0.35305487, 0.34725735, 0.34577082, 0.35483865, 0.37534032],
-       [0.34725735, 0.34577082, 0.35483865, 0.41444921, 0.34947044],
-       [0.34577082, 0.35483865, 0.41444921, 0.38902928, 0.2620272 ],
-       [0.35483865, 0.41444921, 0.38902928, 0.30310689, 0.23222386],
-       [0.41444921, 0.38902928, 0.30310689, 0.2738219 , 0.28396361],
-       [0.38902928, 0.30310689, 0.2738219 , 0.32466177, 0.35960657],
-       [0.30310689, 0.2738219 , 0.32466177, 0.39898911, 0.43373669],
-       [0.2738219 , 0.32466177, 0.39898911, 0.47182993, 0.45688342],
-       [0.32466177, 0.39898911, 0.47182993, 0.49457408, 0.48320725],
-       [0.39898911, 0.47182993, 0.49457408, 0.52044008, 0.4630862 ],
-       [0.47182993, 0.49457408, 0.52044008, 0.50066898, 0.43842652],
-       [0.49457408, 0.52044008, 0.50066898, 0.47643819, 0.47155817],
-       [0.52044008, 0.50066898, 0.47643819, 0.5089936 , 0.538124  ],
-       [0.50066898, 0.47643819, 0.5089936 , 0.57440168, 0.57125565],
-       [0.47643819, 0.5089936 , 0.57440168, 0.6069571 , 0.60726166],
-       [0.5089936 , 0.57440168, 0.6069571 , 0.64233687, 0.58184562],
-       [0.57440168, 0.6069571 , 0.64233687, 0.61736288, 0.6207261 ],
-       [0.6069571 , 0.64233687, 0.61736288, 0.65556713, 0.60151284],
-       [0.64233687, 0.61736288, 0.65556713, 0.63668803, 0.77291969],
-       [0.61736288, 0.65556713, 0.63668803, 0.8051137 , 0.85083196],
-       [0.65556713, 0.63668803, 0.8051137 , 0.88167089, 0.97125554],
-       [0.63668803, 0.8051137 , 0.88167089, 1.        , 0.8502268 ],
-       [0.8051137 , 0.88167089, 1.        , 0.88107625, 0.77261717],
-       [0.88167089, 1.        , 0.88107625, 0.80481644, 0.82496208],
-       [1.        , 0.88107625, 0.80481644, 0.85625095, 0.76202709],
-       [0.88107625, 0.80481644, 0.85625095, 0.79441055, 0.78199694],
-       [0.80481644, 0.85625095, 0.79441055, 0.81403307, 0.87458385],
-       [0.85625095, 0.79441055, 0.81403307, 0.90500967, 0.78789708],
-       [0.79441055, 0.81403307, 0.90500967, 0.8198306 , 0.86762471],
-       [0.81403307, 0.90500967, 0.8198306 , 0.89817157, 0.94251131],
-       [0.90500967, 0.8198306 , 0.89817157, 0.9717557 , 1.        ]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.05262184, 0.03119202, 0.01486547, ..., 0.06184908, 0.01538214,
+        0.        ],
+       [0.03415802, 0.01686056, 0.        , ..., 0.01538214, 0.        ,
+        0.06546414],
+       [0.01846381, 0.        , 0.04563698, ..., 0.        , 0.06745713,
+        0.08925513],
+       ...,
+       [0.81425409, 0.72213798, 0.8051137 , ..., 0.89761257, 0.80580042,
+        0.86394018],
+       [0.79080511, 0.91316807, 0.88167089, ..., 0.80580042, 0.89024197,
+        0.94091117],
+       [1.        , 1.        , 1.        , ..., 0.89024197, 0.96955626,
+        1.        ]])
 </pre></div>
 </div>
 </div>
@@ -801,9 +738,18 @@ Date
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_norm</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df_y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import knn</span>
 <span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestRegressor</span>
 <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_absolute_percentage_error</span>
+
 <span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsRegressor</span>
 
 <span class="n">model_knn</span> <span class="o">=</span> <span class="n">KNeighborsRegressor</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
@@ -831,6 +777,7 @@ Date
 </div>
 </div>
 </div>
+<p>#KNN</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_absolute_percentage_error</span>
@@ -850,7 +797,7 @@ Date
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MAPE: 0.030004537576070852
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MAPE: 0.03521155828500001
 </pre></div>
 </div>
 </div>
@@ -861,7 +808,7 @@ Date
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Actual&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Predicted&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Open&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Volume&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Actual vs Predicted&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -869,84 +816,7 @@ Date
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/59d4dfb34a12e0d877d2ff9afcf3f91f597c00aa39f42ad8fac03c43c8e2a1d6.png" src="_images/59d4dfb34a12e0d877d2ff9afcf3f91f597c00aa39f42ad8fac03c43c8e2a1d6.png" />
-</div>
-</div>
-<p>#Naive Bayes</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.naive_bayes</span> <span class="kn">import</span> <span class="n">GaussianNB</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_absolute_error</span>
-
-<span class="n">model_nb</span> <span class="o">=</span> <span class="n">GaussianNB</span><span class="p">()</span>
-<span class="n">model_nb</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-<span class="n">y_pred_nb</span> <span class="o">=</span> <span class="n">model_nb</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-
-<span class="n">mae_nb</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MAE (Naive Bayes):&#39;</span><span class="p">,</span> <span class="n">mae_nb</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">ValueError</span>Traceback (most recent call last)
-<span class="nn">&lt;ipython-input-17-b8a79458be54&gt;</span> in <span class="ni">&lt;cell line: 5&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> 
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">model_nb</span> <span class="o">=</span> <span class="n">GaussianNB</span><span class="p">()</span>
-<span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">model_nb</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">y_pred_nb</span> <span class="o">=</span> <span class="n">model_nb</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> 
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/sklearn/naive_bayes.py</span> in <span class="ni">fit</span><span class="nt">(self, X, y, sample_weight)</span>
-<span class="g g-Whitespace">    </span><span class="mi">265</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_validate_params</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">266</span>         <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate_data</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">267</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_partial_fit</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">268</span>             <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="n">_refit</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sample_weight</span><span class="o">=</span><span class="n">sample_weight</span>
-<span class="g g-Whitespace">    </span><span class="mi">269</span>         <span class="p">)</span>
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/sklearn/naive_bayes.py</span> in <span class="ni">_partial_fit</span><span class="nt">(self, X, y, classes, _refit, sample_weight)</span>
-<span class="g g-Whitespace">    </span><span class="mi">425</span>             <span class="bp">self</span><span class="o">.</span><span class="n">classes_</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="g g-Whitespace">    </span><span class="mi">426</span> 
-<span class="ne">--&gt; </span><span class="mi">427</span>         <span class="n">first_call</span> <span class="o">=</span> <span class="n">_check_partial_fit_first_call</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">classes</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">428</span>         <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate_data</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">reset</span><span class="o">=</span><span class="n">first_call</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">429</span>         <span class="k">if</span> <span class="n">sample_weight</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/sklearn/utils/multiclass.py</span> in <span class="ni">_check_partial_fit_first_call</span><span class="nt">(clf, classes)</span>
-<span class="g g-Whitespace">    </span><span class="mi">418</span>         <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">419</span>             <span class="c1"># This is the first call to partial_fit</span>
-<span class="ne">--&gt; </span><span class="mi">420</span>             <span class="n">clf</span><span class="o">.</span><span class="n">classes_</span> <span class="o">=</span> <span class="n">unique_labels</span><span class="p">(</span><span class="n">classes</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">421</span>             <span class="k">return</span> <span class="kc">True</span>
-<span class="g g-Whitespace">    </span><span class="mi">422</span> 
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/sklearn/utils/multiclass.py</span> in <span class="ni">unique_labels</span><span class="nt">(*ys)</span>
-<span class="g g-Whitespace">    </span><span class="mi">105</span>     <span class="n">_unique_labels</span> <span class="o">=</span> <span class="n">_FN_UNIQUE_LABELS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">label_type</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">106</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">_unique_labels</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">107</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Unknown label type: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="nb">repr</span><span class="p">(</span><span class="n">ys</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">108</span> 
-<span class="g g-Whitespace">    </span><span class="mi">109</span>     <span class="k">if</span> <span class="n">is_array_api</span><span class="p">:</span>
-
-<span class="ne">ValueError</span>: Unknown label type: (array([ 66.66999817,  68.38999939,  68.97000122,  69.83999634,
-<span class="g g-Whitespace">        </span><span class="mi">70</span><span class="mf">.87000275</span><span class="p">,</span>  <span class="mf">71.87000275</span><span class="p">,</span>  <span class="mf">72.26000214</span><span class="p">,</span>  <span class="mf">73.69999695</span><span class="p">,</span>
-<span class="g g-Whitespace">        </span><span class="mi">73</span><span class="mf">.75</span>      <span class="p">,</span>  <span class="mf">76.5</span>       <span class="p">,</span>  <span class="mf">76.93000031</span><span class="p">,</span>  <span class="mf">77.15000153</span><span class="p">,</span>
-<span class="g g-Whitespace">        </span><span class="mi">77</span><span class="mf">.56999969</span><span class="p">,</span>  <span class="mf">77.75</span>      <span class="p">,</span>  <span class="mf">77.87000275</span><span class="p">,</span>  <span class="mf">78.47000122</span><span class="p">,</span>
-<span class="g g-Whitespace">        </span><span class="mi">78</span><span class="mf">.55000305</span><span class="p">,</span>  <span class="mf">79.59999847</span><span class="p">,</span>  <span class="mf">79.63999939</span><span class="p">,</span>  <span class="mf">80.40000153</span><span class="p">,</span>
-<span class="g g-Whitespace">        </span><span class="mi">80</span><span class="mf">.62999725</span><span class="p">,</span>  <span class="mf">81.06999969</span><span class="p">,</span>  <span class="mf">81.38999939</span><span class="p">,</span>  <span class="mf">81.56999969</span><span class="p">,</span>
-<span class="g g-Whitespace">        </span><span class="mi">82</span><span class="mf">.02999878</span><span class="p">,</span>  <span class="mf">82.79000092</span><span class="p">,</span>  <span class="mf">82.98000336</span><span class="p">,</span>  <span class="mf">83.54000092</span><span class="p">,</span>
-<span class="g g-Whitespace">        </span><span class="mi">83</span><span class="mf">.66999817</span><span class="p">,</span>  <span class="mf">84.31999969</span><span class="p">,</span>  <span class="mf">84.47000122</span><span class="p">,</span>  <span class="mf">84.62999725</span><span class="p">,</span>
-<span class="g g-Whitespace">        </span><span class="mi">84</span><span class="mf">.98999786</span><span class="p">,</span>  <span class="mf">85.09999847</span><span class="p">,</span>  <span class="mf">85.29000092</span><span class="p">,</span>  <span class="mf">85.87999725</span><span class="p">,</span>
-<span class="g g-Whitespace">        </span><span class="mi">86</span><span class="mf">.41000366</span><span class="p">,</span>  <span class="mf">86.66000366</span><span class="p">,</span>  <span class="mf">86.76999664</span><span class="p">,</span>  <span class="mf">86.90000153</span><span class="p">,</span>
-<span class="g g-Whitespace">        </span><span class="mi">88</span><span class="mf">.11000061</span><span class="p">,</span>  <span class="mf">88.83000183</span><span class="p">,</span>  <span class="mf">89.31999969</span><span class="p">,</span>  <span class="mf">89.80000305</span><span class="p">,</span>
-<span class="g g-Whitespace">        </span><span class="mi">89</span><span class="mf">.98999786</span><span class="p">,</span>  <span class="mf">90.23000336</span><span class="p">,</span>  <span class="mf">91.31999969</span><span class="p">,</span>  <span class="mf">91.61000061</span><span class="p">,</span>
-<span class="g g-Whitespace">        </span><span class="mi">91</span><span class="mf">.81999969</span><span class="p">,</span>  <span class="mf">92.79000092</span><span class="p">,</span>  <span class="mf">94.34999847</span><span class="p">,</span>  <span class="mf">94.88999939</span><span class="p">,</span>
-<span class="g g-Whitespace">        </span><span class="mi">94</span><span class="mf">.97000122</span><span class="p">,</span>  <span class="mf">95.65000153</span><span class="p">,</span>  <span class="mf">96.05999756</span><span class="p">,</span>  <span class="mf">96.30000305</span><span class="p">,</span>
-<span class="g g-Whitespace">        </span><span class="mi">96</span><span class="mf">.33999634</span><span class="p">,</span>  <span class="mf">96.41999817</span><span class="p">,</span>  <span class="mf">96.66000366</span><span class="p">,</span>  <span class="mf">96.69999695</span><span class="p">,</span>
-<span class="g g-Whitespace">        </span><span class="mi">96</span><span class="mf">.76999664</span><span class="p">,</span>  <span class="mf">97.</span>        <span class="p">,</span>  <span class="mf">97.04000092</span><span class="p">,</span>  <span class="mf">97.38999939</span><span class="p">,</span>
-<span class="g g-Whitespace">        </span><span class="mi">98</span><span class="o">.</span>        <span class="p">,</span>  <span class="mf">99.18000031</span><span class="p">,</span> <span class="mf">100.05000305</span><span class="p">,</span> <span class="mf">101.79000092</span><span class="p">,</span>
-<span class="g g-Whitespace">       </span><span class="mi">103</span><span class="mf">.98000336</span><span class="p">,</span> <span class="mf">104.68000031</span><span class="p">,</span> <span class="mf">105.98000336</span><span class="p">,</span> <span class="mf">106.36000061</span><span class="p">,</span>
-<span class="g g-Whitespace">       </span><span class="mi">107</span><span class="mf">.25</span>      <span class="p">,</span> <span class="mf">117.29000092</span><span class="p">,</span> <span class="mf">117.30999756</span><span class="p">,</span> <span class="mf">117.91000366</span><span class="p">,</span>
-<span class="g g-Whitespace">       </span><span class="mi">120</span><span class="mf">.75</span>      <span class="p">,</span> <span class="mf">122.41999817</span><span class="p">,</span> <span class="mf">122.45999908</span><span class="p">,</span> <span class="mf">123.56999969</span><span class="p">,</span>
-<span class="g g-Whitespace">       </span><span class="mi">124</span><span class="mf">.02999878</span><span class="p">,</span> <span class="mf">128.52000427</span><span class="p">,</span> <span class="mf">130.41999817</span><span class="p">,</span> <span class="mf">132.32000732</span><span class="p">]),)</span>
-</pre></div>
-</div>
+<img alt="_images/576751ac608223f4efc241d2fc7b8b4fce5cedd1e137fcf5b90023b942070e78.png" src="_images/576751ac608223f4efc241d2fc7b8b4fce5cedd1e137fcf5b90023b942070e78.png" />
 </div>
 </div>
 <p>#Decision Tree (Pohon Keputusan)</p>
@@ -968,6 +838,28 @@ Date
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MAPE: 0.03878965743359157
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Membuat grafik MAPE</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Actual&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Predicted&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Volume&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Actual vs Predicted&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/8a07d006d9911c2e6712808737bb58b264fb6d92b3c06bb0e65efbc71d802721.png" src="_images/8a07d006d9911c2e6712808737bb58b264fb6d92b3c06bb0e65efbc71d802721.png" />
+</div>
 </div>
 <p>#Multilayer Percptron (MLP)</p>
 <div class="cell docutils container">
@@ -987,6 +879,32 @@ Date
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MAPE:&#39;</span><span class="p">,</span> <span class="n">mape</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MAPE: 0.7443542613259527
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.10/dist-packages/sklearn/neural_network/_multilayer_perceptron.py:686: ConvergenceWarning: Stochastic Optimizer: Maximum iterations (200) reached and the optimization hasn&#39;t converged yet.
+  warnings.warn(
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Membuat grafik MAPE</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Actual&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Predicted&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Volume&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Actual vs Predicted&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/73fe1194cf0e59b77c855f54040ae6870be01dca6546db303962ae64d8fc4b06.png" src="_images/73fe1194cf0e59b77c855f54040ae6870be01dca6546db303962ae64d8fc4b06.png" />
 </div>
 </div>
 </div>
